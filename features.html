@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Us | True Cars</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="home-bg">
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="logo">True Cars</div>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="gallery.html">Gallery</a></li>
+      <li><a href="about.html" class="active">About</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="features.html">Features</a></li>
+    </ul>
+  </nav>
+<!-- Featured Cars Section -->
+
+<section class="featured-cars">
+  <div class="featured-container">
+    <h2>Featured Cars</h2>
+    <p class="featured-subtitle">Filter cars by price & fuel type</p>
+
+    <!-- Filters -->
+    <div class="filters">
+      <select id="priceFilter">
+        <option value="all">All Prices</option>
+        <option value="0-500000">Below ₹5 Lakh</option>
+        <option value="500000-1000000">₹5–10 Lakh</option>
+        <option value="1000000">Above ₹10 Lakh</option>
+      
+      </select>
+
+      <select id="fuelFilter">
+        <option value="all">All Fuel</option>
+        <option value="petrol">Petrol</option>13frazs
+        <option value="diesel">Diesel</option>
+        <option value="electric">Electric</option>
+      </select>
+    </div>
+
+    <!-- Cars -->
+    <!-- <div class="cars-grid" id="carsGrid">
+
+      <div class="car-card" data-price="850000" data-fuel="petrol">
+        <img src="https://wallpapers.com/images/hd/dynamic-and-stylish-toyota-corolla-cruising-on-the-highway-5xlcnkipjvwzlnt4.jpg">
+        <div class="car-info">
+          <h3>Toyota Corolla</h3>
+          <p>Petrol • Automatic</p>
+          <span class="price">₹8,50,000</span>
+        </div>
+      </div>
+
+      <div class="car-card" data-price="1320000" data-fuel="diesel">
+        <img src="https://autonexa.com/storage/uploads/2023/02/hyundai-creta-right-front-three-quarter0_1675329267.webp">
+        <div class="car-info">
+          <h3>Hyundai Creta</h3>
+          <p>Diesel • Automatic</p>
+          <span class="price">₹13,20,000</span>
+        </div>
+      </div>
+
+      <div class="car-card" data-price="420000" data-fuel="petrol">
+        <img src="https://carindia.in/wp-content/uploads/2019/04/2019-Maruti-Suzuki-Alto-launch-price-and-specs_1.jpg">
+        <div class="car-info">
+          <h3>Maruti Alto</h3>
+          <p>Petrol • Manual</p>
+          <span class="price">₹4,20,000</span>
+        </div>
+      </div>
+
+      <div class="car-card" data-price="1500000" data-fuel="electric">
+        <img src="https://www.bncap.in/wp-content/uploads/2024/06/1314_kanger-nexon-ev-3_0_EMPOWERED_3C-LR_FRONT-3-4th_F1_RGB-2-1.png">
+        <div class="car-info">
+          <h3>Tata Nexon EV</h3>
+          <p>Electric • Automatic</p>
+          <span class="price">₹15,00,000</span>
+        </div>
+      </div>
+
+    </div>
+  </div> -->
+
+  <div class="cars-grid" id="carsGrid">
+
+  <!-- BMW i8 -->
+  <div class="car-card" data-price="25000000" data-fuel="petrol">
+    <img src="https://wallpaperaccess.com/full/13652.jpg">
+    <div class="car-info">
+      <h3>BMW i8</h3>
+      <p>Petrol • Automatic • 2022</p>
+      <span class="price">₹2,50,00,000</span>
+    </div>
+  </div>
+
+  <!-- Ferrari 488 -->
+  <div class="car-card" data-price="39000000" data-fuel="petrol">
+    <img src="https://wallpaperaccess.com/full/13650.jpg">
+    <div class="car-info">
+      <h3>Ferrari 488</h3>
+      <p>Petrol • Automatic • 2021</p>
+      <span class="price">₹3,90,00,000</span>
+    </div>
+  </div>
+
+  <!-- Ferrari Roma -->
+  <div class="car-card" data-price="38000000" data-fuel="petrol">
+    <img src="https://img.freepik.com/premium-photo/red-sports-car-is-parked-alongside-road-with-vibrant-eyecatching-appearance-bright-red-ferrari-caught-sunset-light-ai-generated_585735-22208.jpg">
+    <div class="car-info">
+      <h3>Ferrari Roma</h3>
+      <p>Petrol • Automatic • 2023</p>
+      <span class="price">₹3,80,00,000</span>
+    </div>
+  </div>
+
+  <!-- Lamborghini Huracan -->
+  <div class="car-card" data-price="41000000" data-fuel="petrol">
+    <img src="https://wallpaperaccess.com/full/155161.jpg">
+    <div class="car-info">
+      <h3>Lamborghini Huracan</h3>
+      <p>Petrol • Automatic • 2022</p>
+      <span class="price">₹4,10,00,000</span>
+    </div>
+  </div>
+
+  <!-- Bugatti Chiron -->
+  <div class="car-card" data-price="190000000" data-fuel="petrol">
+    <img src="https://img.freepik.com/premium-photo/wallpaper-beautiful-car_935395-27929.jpg?w=996">
+    <div class="car-info">
+      <h3>Bugatti Chiron</h3>
+      <p>Petrol • Automatic • 2021</p>
+      <span class="price">₹19,00,00,000</span>
+    </div>
+  </div>
+
+  <!-- Porsche 911 -->
+  <div class="car-card" data-price="21000000" data-fuel="petrol">
+    <img src="https://tse4.mm.bing.net/th/id/OIP.-IVakkp5sjqwMAj0LTmTGwHaE7">
+    <div class="car-info">
+      <h3>Porsche 911</h3>
+      <p>Petrol • Automatic • 2022</p>
+      <span class="price">₹2,10,00,000</span>
+    </div>
+  </div>
+
+  <!-- Audi R8 -->
+  <div class="car-card" data-price="27000000" data-fuel="petrol">
+    <img src="https://i.pinimg.com/736x/97/f4/21/97f4213b909b4bc514b42b69b3288e9e.jpg">
+    <div class="car-info">
+      <h3>Audi R8</h3>
+      <p>Petrol • Automatic • 2021</p>
+      <span class="price">₹2,70,00,000</span>
+    </div>
+  </div>
+
+  <!-- Rolls Royce Wraith -->
+  <div class="car-card" data-price="65000000" data-fuel="petrol">
+    <img src="https://octane.rent/wp-content/uploads/2023/05/rolls-royce-wraith-white-3.webp">
+    <div class="car-info">
+      <h3>Rolls Royce Wraith</h3>
+      <p>Petrol • Automatic • 2021</p>
+      <span class="price">₹6,50,00,000</span>
+    </div>
+  </div>
+
+  <!-- Mercedes AMG GT -->
+  <div class="car-card" data-price="27500000" data-fuel="petrol">
+    <img src="https://tse3.mm.bing.net/th/id/OIP.Jfz-Kv9e0MJRSTlEucElnAHaEK">
+    <div class="car-info">
+      <h3>Mercedes AMG GT</h3>
+      <p>Petrol • Automatic • 2022</p>
+      <span class="price">₹2,75,00,000</span>
+    </div>
+  </div>
+
+  <!-- Volvo Truck -->
+  <div class="car-card" data-price="4500000" data-fuel="diesel">
+    <img src="https://static.vecteezy.com/system/resources/thumbnails/044/520/058/small_2x/ai-generated-system-transport-and-logistics-of-truk-container-cargo-generative-ai-photo.jpg">
+    <div class="car-info">
+      <h3>Volvo Cargo Truck</h3>
+      <p>Diesel • Manual • 2023</p>
+      <span class="price">₹45,00,000</span>
+    </div>
+  </div>
+
+</div>
+
+</section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <p>Created By - Charan Dawange</p>
+    <div class="socials">
+      <a href="#">Facebook</a>
+      <a href="#">Twitter</a>
+      <a href="#">Instagram</a>
+    </div>
+  </footer>
+
+  <script src="syntax.js"></script>
+</body>
+</html>

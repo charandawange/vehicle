@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>True Cars</title>
+    <link href="style.css" rel="stylesheet">
+</head>
+<body>
+  <nav class="navbar">
+  <div class="logo">True Cars</div>
+
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+      <li><a href="gallery.html">Gallery</a></li>
+      <li><a href="about.html" class="active">About</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="features.html">Features</a></li>
+  </ul>
+  </nav>
+
+<div class="slider">
+  <img src="13660.jpg" class="slide active">
+  <img src="13684.jpg" class="slide">
+  <img src="1537491.jpg" class="slide">
+
+  <button class="prev">❮</button>
+  <button class="next">❯</button>
+</div>
+<h1>Available Cars</h1>
+<div class="products">
+  <div class="product-card">
+    <img src="https://www.sueddeutsche.de/2022/06/08/e4b394b2-de28-45e5-9705-406b2496f312.jpeg?q=60&fm=jpeg&width=1000&rect=70%2C146%2C1252%2C704" alt="BMW X5" onclick="openFullImage(this.src)">
+    <h3>BMW X5</h3>
+    <p class="price">₹75,00,000</p>
+    <button class="buy-btn" onclick="buyNow('BMW X5')">Buy Now</button>
+    
+  </div>
+
+  <div class="product-card">
+    <img src="https://www.ultimatecarpage.com/images/car/6006/BMW-X5-M-50377.jpg" alt="Audi Q7" onclick="openFullImage(this.src)">
+    <h3>Audi Q7</h3>
+    <p class="price">₹82,00,000</p>
+    <button class="buy-btn" onclick="buyNow('Audi Q7')">Buy Now</button>
+    
+  </div>
+
+  <div class="product-card">
+    <img src="https://www.motortrend.com/uploads/2023/05/014-2023-mercedes-benz-glc-30-1.jpg" alt="Mercedes GLC" onclick="openFullImage(this.src)">
+    <h3>Mercedes GLC</h3>
+    <p class="price">₹68,00,000</p>
+    <button class="buy-btn" onclick="buyNow('Mercedes GLC')">Buy Now</button>
+   
+  </div>
+
+  <div class="product-card">
+    <img src="https://www.motortrend.com/files/67abe44bb59a9e0008e34fa0/1-2025-land-rover-range-rover-front-view.jpg" alt="Range Rover" onclick="openFullImage(this.src)">
+    <h3>Range Rover</h3>
+    <p class="price">₹1,20,00,000</p>
+    <button class="buy-btn" onclick="buyNow('Range Rover')">Buy Now</button>
+ 
+  </div>
+   <div class="product-card">
+    <img src="https://www.dadamotors.com/all/superadmin/carimage2/mahindra-thar-2.webp" alt="Mahindra Thar" onclick="openFullImage(this.src)">
+    <h3>Mahindra Thar</h3>
+    <p class="price">₹20,00,000</p>
+    <button class="buy-btn" onclick="buyNow('Mahindra Thar')">Buy Now</button>
+ 
+  </div>
+   <div class="product-card">
+    <img src="https://media.zigcdn.com/media/model/2025/Dec/mahindra-scorpio1_600x400.jpg" alt="Mahindra Scorpio" onclick="openFullImage(this.src)">
+    <h3>Mahindra Scorpio</h3>
+    <p class="price">₹15,00,000</p>
+    <button class="buy-btn" onclick="buyNow('Mahindra Scorpio')">Buy Now</button>
+ 
+  </div>
+  <div class="product-card">
+    <img src="https://stimg.cardekho.com/images/carexteriorimages/630x420/Hyundai/Verna/7729/1616055133475/front-left-side-47.jpg?imwidth=420&impolicy=resize" alt="Hundai verna" onclick="openFullImage(this.src)">
+    <h3>Hundai verna</h3>
+    <p class="price">₹25,00,000</p>
+    <button class="buy-btn" onclick="buyNow('Hundai verna')">Buy Now</button>
+ 
+  </div>
+  <div class="product-card">
+    <img src="https://media.zigcdn.com/media/content/2017/Apr/2017-hyundai-creta-1.jpg?tr=w-420" alt="Honda Creata" onclick="openFullImage(this.src)">
+    <h3>Honda Creata</h3>
+    <p class="price">₹18,00,000</p>
+    <button class="buy-btn" onclick="buyNow('Honda Creata')">Buy Now</button>
+  </div>
+  <div class="product-card">
+    <img src="https://imgd.aeplcdn.com/664x374/n/cw/ec/134287/city-exterior-right-front-three-quarter-2.png?isig=0&q=80" alt="Honda City" onclick="openFullImage(this.src)">
+    <h3>Honda City</h3>
+    <p class="price">₹10,00,000</p>
+    <button class="buy-btn" onclick="buyNow('Honda City')">Buy Now</button>
+  </div>
+  <div class="product-card">
+    <img src="https://cdni.autocarindia.com/ExtraImages/20210204105942_2021_Tata_Safari_white_front.jpg" alt="Tata Safari" onclick="openFullImage(this.src)">
+    <h3>Tata Safari</h3>
+    <p class="price">₹18,00,000</p>
+    <button class="buy-btn" onclick="buyNow('Tata Safari')">Buy Now</button>
+  </div>
+</div>
+<div id="imageModal" class="modal">
+    <span class="close-btn" onclick="closeFullImage()">&times;</span>
+    <img class="modal-content" id="imgFullView">
+</div>
+
+<h1>Gallery</h1>
+
+<div class="gallery">
+
+  <div class="gallery-item">
+    <img src="https://wallpaperaccess.com/full/13652.jpg" onclick="openLightbox(this.src)">
+    <div class="gallery-info">
+      <h3>BMW i8</h3>
+      <p>Year: 2022</p>
+      <span>₹2,50,00,000</span>
+    </div>
+  </div>
+
+  <div class="gallery-item">
+    <img src="https://wallpaperaccess.com/full/13650.jpg" onclick="openLightbox(this.src)">
+    <div class="gallery-info">
+      <h3>Ferrari 488</h3>
+      <p>Year: 2021</p>
+      <span>₹3,90,00,000</span>
+    </div>
+  </div>
+
+  <div class="gallery-item">
+    <img src="https://img.freepik.com/premium-photo/red-sports-car-is-parked-alongside-road-with-vibrant-eyecatching-appearance-bright-red-ferrari-caught-sunset-light-ai-generated_585735-22208.jpg" onclick="openLightbox(this.src)">
+    <div class="gallery-info">
+      <h3>Ferrari Roma</h3>
+      <p>Year: 2023</p>
+      <span>₹3,80,00,000</span>
+    </div>
+  </div>
+
+  <div class="gallery-item">
+    <img src="https://wallpaperaccess.com/full/155161.jpg" onclick="openLightbox(this.src)">
+    <div class="gallery-info">
+      <h3>Lamborghini Huracan</h3>
+      <p>Year: 2022</p>
+      <span>₹4,10,00,000</span>
+    </div>
+  </div>
+
+  <div class="gallery-item">
+    <img src="https://img.freepik.com/premium-photo/wallpaper-beautiful-car_935395-27929.jpg?w=996" onclick="openLightbox(this.src)">
+    <div class="gallery-info">
+      <h3>Bugatti Chiron</h3>
+      <p>Year: 2021</p>
+      <span>₹19,00,00,000</span>
+    </div>
+  </div>
+
+  <div class="gallery-item">
+    <img src="https://tse4.mm.bing.net/th/id/OIP.-IVakkp5sjqwMAj0LTmTGwHaE7" onclick="openLightbox(this.src)">
+    <div class="gallery-info">
+      <h3>Porsche 911</h3>
+      <p>Year: 2022</p>
+      <span>₹2,10,00,000</span>
+    </div>
+  </div>
+
+  <div class="gallery-item">
+    <img src="https://img.freepik.com/premium-photo/row-classic-cars-display-museum_962508-62059.jpg" onclick="openLightbox(this.src)">
+    <div class="gallery-info">
+      <h3>Classic Cars Collection</h3>
+      <p>Year: 1960–1980</p>
+      <span>₹50,00,000+</span>
+    </div>
+  </div>
+
+  <div class="gallery-item">
+    <img src="https://th.bing.com/th/id/R.2e3fc935839d0b5506229eab1d1190bf?rik=UaTTwVhMdqcLjg&riu=http%3a%2f%2fwallup.net%2fwp-content%2fuploads%2f2016%2f01%2f208918-car-luxury_cars-zenvo-zenvo_st1.jpg&ehk=FK4OdXmjmcBqa5NWTWIoAyUZQNYtrJn3tzSRHQTDsbw%3d&risl=&pid=ImgRaw&r=0" onclick="openLightbox(this.src)">
+    <div class="gallery-info">
+      <h3>Zenvo ST1</h3>
+      <p>Year: 2020</p>
+      <span>₹8,50,00,000</span>
+    </div>
+  </div>
+
+  <div class="gallery-item">
+    <img src="https://i.pinimg.com/736x/97/f4/21/97f4213b909b4bc514b42b69b3288e9e.jpg" onclick="openLightbox(this.src)">
+    <div class="gallery-info">
+      <h3>Audi R8</h3>
+      <p>Year: 2021</p>
+      <span>₹2,70,00,000</span>
+    </div>
+  </div>
+
+  <div class="gallery-item">
+    <img src="https://img.freepik.com/premium-photo/exotic-cars-futuristic-sport-car_739685-7691.jpg" onclick="openLightbox(this.src)">
+    <div class="gallery-info">
+      <h3>Concept Hypercar</h3>
+      <p>Year: 2024</p>
+      <span>₹10,00,00,000+</span>
+    </div>
+  </div>
+
+  <div class="gallery-item">
+    <img src="https://tse2.mm.bing.net/th/id/OIP.evIzgi350zEEB-qRnjEdWQHaE8" onclick="openLightbox(this.src)">
+    <div class="gallery-info">
+      <h3>McLaren 720S</h3>
+      <p>Year: 2022</p>
+      <span>₹4,65,00,000</span>
+    </div>
+  </div>
+
+  <div class="gallery-item">
+    <img src="https://i.pinimg.com/736x/22/a3/ce/22a3ce16552a6670a111a8e054f1fe1a.jpg" onclick="openLightbox(this.src)">
+    <div class="gallery-info">
+      <h3>Koenigsegg Jesko</h3>
+      <p>Year: 2023</p>
+      <span>₹25,00,00,000</span>
+    </div>
+  </div>
+
+  <div class="gallery-item">
+    <img src="https://octane.rent/wp-content/uploads/2023/05/rolls-royce-wraith-white-3.webp" onclick="openLightbox(this.src)">
+    <div class="gallery-info">
+      <h3>Rolls Royce Wraith</h3>
+      <p>Year: 2021</p>
+      <span>₹6,50,00,000</span>
+    </div>
+  </div>
+
+  <div class="gallery-item">
+    <img src="https://tse3.mm.bing.net/th/id/OIP.Jfz-Kv9e0MJRSTlEucElnAHaEK" onclick="openLightbox(this.src)">
+    <div class="gallery-info">
+      <h3>Mercedes AMG GT</h3>
+      <p>Year: 2022</p>
+      <span>₹2,75,00,000</span>
+    </div>
+  </div>
+
+  <div class="gallery-item">
+    <img src="https://static.vecteezy.com/system/resources/thumbnails/044/520/058/small_2x/ai-generated-system-transport-and-logistics-of-truk-container-cargo-generative-ai-photo.jpg" onclick="openLightbox(this.src)">
+    <div class="gallery-info">
+      <h3>Volvo Cargo Truck</h3>
+      <p>Year: 2023</p>
+      <span>₹45,00,000</span>
+    </div>
+  </div>
+
+</div>
+
+
+
+<div id="lightbox" onclick="closeLightbox()">
+  <span class="close">&times;</span>
+  <img id="lightbox-img">
+</div>
+<!-- About Section -->
+  <section class="about-section">
+    <div class="about-container">
+      <h1> True Cars</h1>
+      <p>
+        True Cars is a trusted car showroom platform offering premium and
+        budget-friendly vehicles. We focus on quality, transparency, and
+        customer satisfaction.
+      </p>
+
+      <div class="about-cards">
+        <div class="about-card">
+          <h3>🚗 Our Mission</h3>
+          <p>
+            To provide genuine vehicles with honest pricing and
+            a smooth buying experience.
+          </p>
+        </div>
+
+        <div class="about-card">
+          <h3>⭐ Why Choose Us</h3>
+          <p>
+            Wide range of cars, trusted brands, easy financing,
+            and dedicated support.
+          </p>
+        </div>
+
+        <div class="about-card">
+          <h3>🤝 Our Promise</h3>
+          <p>
+            100% transparency, verified vehicles,
+            and customer-first service.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+   <!-- Contact Section -->
+  <section class="contact-section">
+    <div class="contact-container">
+
+      <h1>Contact Us</h1>
+      <p>Have a question or want to buy a car? Get in touch with us!</p>
+
+      <form class="contact-form" onsubmit="submitForm(event)">
+  <input type="text" id="name" placeholder="Your Name" required>
+  <input type="email" id="email" placeholder="Your Email" required>
+  <input type="tel" id="phone" placeholder="Phone Number" pattern="[0-9]{10}" title="Enter 10 digit phone number" required>
+  <textarea id="message" placeholder="Your Message" rows="5" required></textarea><br>
+  <button type="submit" class="frm-btn">Submit</button>
+</form>
+
+
+    </div>
+  </section>
+<!-- Features Section -->  
+ <section class="features-section">
+  <div class="features-container">
+    <h2>Why Choose True Cars</h2>
+    <p class="features-subtitle">
+      We deliver quality cars with trust, transparency, and comfort.
+    </p>
+
+    <div class="features-grid">
+      <div class="feature-card">
+        <span>🚗</span>
+        <h3>Verified Cars</h3>
+        <p>All vehicles are fully inspected and verified for quality.</p>
+      </div>
+
+      <div class="feature-card">
+        <span>💰</span>
+        <h3>Best Pricing</h3>
+        <p>Transparent pricing with no hidden charges.</p>
+      </div>
+
+      <div class="feature-card">
+        <span>📄</span>
+        <h3>Easy Documentation</h3>
+        <p>Hassle-free paperwork and quick ownership transfer.</p>
+      </div>
+
+      <div class="feature-card">
+        <span>🤝</span>
+        <h3>Trusted Support</h3>
+        <p>Dedicated customer support before and after purchase.</p>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- Featured Cars Section -->
+
+<section class="featured-cars">
+  <div class="featured-container">
+    <h2>Featured Cars</h2>
+    <p class="featured-subtitle">Filter cars by price & fuel type</p>
+
+    <!-- Filters -->
+    <div class="filters">
+      <select id="priceFilter">
+        <option value="all">All Prices</option>
+        <option value="0-500000">Below ₹5 Lakh</option>
+        <option value="500000-1000000">₹5–10 Lakh</option>
+        <option value="1000000">Above ₹10 Lakh</option>
+      </select>
+
+      <select id="fuelFilter">
+        <option value="all">All Fuel</option>
+        <option value="petrol">Petrol</option>
+        <option value="diesel">Diesel</option>
+        <option value="electric">Electric</option>
+      </select>
+    </div>
+
+    <!-- Cars -->
+    <div class="cars-grid" id="carsGrid">
+
+      <div class="car-card" data-price="850000" data-fuel="petrol">
+        <img src="https://wallpapers.com/images/hd/dynamic-and-stylish-toyota-corolla-cruising-on-the-highway-5xlcnkipjvwzlnt4.jpg">
+        <div class="car-info">
+          <h3>Toyota Corolla</h3>
+          <p>Petrol • Automatic</p>
+          <span class="price">₹8,50,000</span>
+        </div>
+      </div>
+
+      <div class="car-card" data-price="1320000" data-fuel="diesel">
+        <img src="https://autonexa.com/storage/uploads/2023/02/hyundai-creta-right-front-three-quarter0_1675329267.webp">
+        <div class="car-info">
+          <h3>Hyundai Creta</h3>
+          <p>Diesel • Automatic</p>
+          <span class="price">₹13,20,000</span>
+        </div>
+      </div>
+
+      <div class="car-card" data-price="420000" data-fuel="petrol">
+        <img src="https://carindia.in/wp-content/uploads/2019/04/2019-Maruti-Suzuki-Alto-launch-price-and-specs_1.jpg">
+        <div class="car-info">
+          <h3>Maruti Alto</h3>
+          <p>Petrol • Manual</p>
+          <span class="price">₹4,20,000</span>
+        </div>
+      </div>
+
+      <div class="car-card" data-price="1500000" data-fuel="electric">
+        <img src="https://www.bncap.in/wp-content/uploads/2024/06/1314_kanger-nexon-ev-3_0_EMPOWERED_3C-LR_FRONT-3-4th_F1_RGB-2-1.png">
+        <div class="car-info">
+          <h3>Tata Nexon EV</h3>
+          <p>Electric • Automatic</p>
+          <span class="price">₹15,00,000</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+<!-- Video Section -->
+<section class="video-section">
+  <div class="video-wrapper">
+    <video autoplay muted loop playsinline>
+      <source src="C:\Users\admin\Desktop\Tanuja\images slider\0_Car_Automobile_3840x2160.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+
+    <div class="video-overlay">
+      <h2>Experience Luxury Performance</h2>
+      <p>Crafted for those who demand excellence</p>
+    </div>
+  </div>
+</section>
+
+
+
+<footer class="footer">
+  <p> Created By- Charan Dawange</p>
+  <div class="socials">
+    <a href="#">Facebook</a>
+    <a href="#">Twitter</a>
+    <a href="#">Instagram</a>
+  </div>
+</footer>
+
+</body>
+<script src="syntax.js"></script>
+</html>
