@@ -1,3 +1,7 @@
+function toggleMenu() {
+  document.querySelector(".nav-links").classList.toggle("show");
+}
+
 const slides = document.querySelectorAll('.slide');
 let index = 0;
 
