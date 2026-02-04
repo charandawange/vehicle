@@ -18,12 +18,15 @@ body{
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: transparent;
+  background: white;
   padding: 15px 30px;
+  position: sticky;
+  top: 0;
+  z-index: 100;
 }
 
 .logo {
-  color: wheat;
+  color: red;
   font-size: 22px;
   font-weight: bold;
 }
@@ -36,7 +39,7 @@ body{
 
 .nav-links a {
   text-decoration: none;
-  color: wheat;
+  color: black;
   font-size: 16px;
   transition: color 0.3s;
 }
@@ -424,7 +427,7 @@ h1{
 }
 input,textarea{
   opacity: 0.4;
-  color:  ;
+  color:  brown;
 }
 placeholder{
   color:#9cf311
@@ -661,5 +664,154 @@ placeholder{
 
   .video-overlay h2 {
     font-size: 22px;
+  }
+}
+/* ===================== GLOBAL MOBILE FIX ===================== */
+img, video {
+  max-width: 100%;
+  height: auto;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+/* ===================== NAVBAR ===================== */
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    gap: 10px;
+    padding: 10px;
+  }
+
+  .nav-links {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .logo {
+    font-size: 20px;
+  }
+}
+
+/* ===================== SLIDER ===================== */
+@media (max-width: 768px) {
+  .slider {
+    height: 250px;
+  }
+
+  button.prev,
+  button.next {
+    font-size: 18px;
+    padding: 5px 8px;
+  }
+}
+
+/* ===================== PRODUCTS ===================== */
+@media (max-width: 768px) {
+  .products {
+    grid-template-columns: 1fr;
+    padding: 15px;
+  }
+
+  .product-card img {
+    height: 180px;
+  }
+
+  .product-card h3 {
+    font-size: 15px;
+  }
+}
+
+/* ===================== GALLERY ===================== */
+@media (max-width: 768px) {
+  .gallery {
+    grid-template-columns: 1fr;
+    padding: 20px;
+  }
+
+  .gallery-item img {
+    height: 180px;
+  }
+}
+
+/* ===================== ABOUT SECTION ===================== */
+@media (max-width: 768px) {
+  .about-container h1 {
+    font-size: 26px;
+  }
+
+  .about-container p {
+    font-size: 15px;
+  }
+
+  .about-cards {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ===================== CONTACT ===================== */
+@media (max-width: 768px) {
+  .contact-container h1 {
+    font-size: 26px;
+  }
+
+  .contact-form input,
+  .contact-form textarea {
+    font-size: 14px;
+  }
+}
+
+/* ===================== FEATURES ===================== */
+@media (max-width: 768px) {
+  .features-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .features-container h2 {
+    font-size: 24px;
+  }
+}
+
+/* ===================== FILTERS & CARS ===================== */
+@media (max-width: 768px) {
+  .filters {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .cars-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .car-card img {
+    height: 160px;
+  }
+}
+
+/* ===================== VIDEO SECTION ===================== */
+@media (max-width: 768px) {
+  .video-wrapper {
+    height: 220px;
+  }
+
+  .video-overlay h2 {
+    font-size: 20px;
+  }
+
+  .video-overlay p {
+    font-size: 13px;
+  }
+}
+
+/* ===================== FOOTER ===================== */
+@media (max-width: 768px) {
+  .footer p {
+    font-size: 12px;
+  }
+
+  .socials a {
+    display: inline-block;
+    margin: 5px;
   }
 }
