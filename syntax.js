@@ -1,7 +1,9 @@
+/* ================= MENU TOGGLE ================= */
 function toggleMenu() {
   document.querySelector(".nav-links").classList.toggle("show");
 }
 
+/* ================= SLIDER ================= */
 const slides = document.querySelectorAll('.slide');
 let index = 0;
 
@@ -17,64 +19,69 @@ function showPrevSlide() {
   slides[index].classList.add('active');
 }
 
-document.querySelector('.next').onclick = showNextSlide;
-document.querySelector('.prev').onclick = showPrevSlide;
-
-setInterval(showNextSlide, 5000); 
-
- // 1. Function to open full image
-    function openFullImage(imgSrc) {
-        document.getElementById("imageModal").style.display = "block";
-        document.getElementById("imgFullView").src = imgSrc;
-    }
-
-    // 2. Function to close full image
-    function closeFullImage() {
-        document.getElementById("imageModal").style.display = "none";
-    }
-
-    // 3. Buy Button Action
-    function buyNow(carName) {
-        alert("Thank you for choosing the " + carName + "! Our team will contact you soon.");
-    }
-
-    // Modal ko screen click se band karna
-    window.onclick = function(event) {
-        let modal = document.getElementById("imageModal");
-        if (event.target == modal) {
-            modal.style.display = "none";
-        }
-    }
-
-// Lightbox functions
-  function openLightbox(src) {
-    document.getElementById("lightbox").style.display = "flex";
-    document.getElementById("lightbox-img").src = src;
-  }
-
-  function closeLightbox() {
-    document.getElementById("lightbox").style.display = "none";
-  }
-
-// contact form validation
-
-function submitForm(event) {
-  event.preventDefault();
-  alert("Thank you! Your message has been sent.");
+if (document.querySelector(".next")) {
+  document.querySelector('.next').onclick = showNextSlide;
+  document.querySelector('.prev').onclick = showPrevSlide;
+  setInterval(showNextSlide, 5000);
 }
 
+/* ================= IMAGE MODAL ================= */
+function openFullImage(imgSrc) {
+  document.getElementById("imageModal").style.display = "block";
+  document.getElementById("imgFullView").src = imgSrc;
+}
 
+function closeFullImage() {
+  document.getElementById("imageModal").style.display = "none";
+}
+
+window.onclick = function(event) {
+  let modal = document.getElementById("imageModal");
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+};
+
+/* ================= LIGHTBOX ================= */
+function openLightbox(src) {
+  document.getElementById("lightbox").style.display = "flex";
+  document.getElementById("lightbox-img").src = src;
+}
+
+function closeLightbox() {
+  document.getElementById("lightbox").style.display = "none";
+}
+
+/* ================= BUY NOW WITH LOGIN CHECK ================= */
+function buyNow(carName) {
+  const isLoggedIn = localStorage.getItem("isLoggedIn");
+
+  if (isLoggedIn === "true") {
+    const messageBox = document.getElementById("message");
+    if (messageBox) {
+      messageBox.value = "I am interested in buying: " + carName;
+    }
+
+    const contactForm = document.getElementById("contact-form");
+    if (contactForm) {
+      contactForm.scrollIntoView({ behavior: "smooth" });
+    }
+  } else {
+    alert("Please login first to buy this car");
+    window.location.href = "login.html";
+  }
+}
+
+/* ================= CONTACT FORM ================= */
 function submitForm(event) {
-  event.preventDefault(); // Stop form from submitting
+  event.preventDefault();
 
-  // Get form values
   const name = document.getElementById("name").value.trim();
   const email = document.getElementById("email").value.trim();
   const phone = document.getElementById("phone").value.trim();
   const message = document.getElementById("message").value.trim();
 
-  // Simple validations
-  if (name.length < 10) {
+  if (name.length < 3) {
     alert("Please enter a valid name (at least 3 characters).");
     return;
   }
@@ -85,8 +92,7 @@ function submitForm(event) {
     return;
   }
 
-  const phoneRegex = /^[0-9]{10}$/;
-  if (!phoneRegex.test(phone)) {
+  if (!/^[0-9]{10}$/.test(phone)) {
     alert("Please enter a valid 10-digit phone number.");
     return;
   }
@@ -96,57 +102,50 @@ function submitForm(event) {
     return;
   }
 
-  // If validation passes
   alert("Form submitted successfully! ✅");
-
-  // Optional: Reset form
   document.querySelector(".contact-form").reset();
+
+  // Redirect back to index page after submission
+  window.location.href = "index.html";
 }
 
-
-// featured cars section 
- const priceFilter = document.getElementById("priceFilter");
+/* ================= FEATURED CARS FILTER ================= */
+const priceFilter = document.getElementById("priceFilter");
 const fuelFilter = document.getElementById("fuelFilter");
 const cars = document.querySelectorAll(".car-card");
 
 function filterCars() {
-  const priceValue = priceFilter.value;
-  const fuelValue = fuelFilter.value;
-
   cars.forEach(car => {
-    const carPrice = parseInt(car.dataset.price);
-    const carFuel = car.dataset.fuel;
+    const price = parseInt(car.dataset.price);
+    const fuel = car.dataset.fuel;
 
-    let priceMatch = false;
-    let fuelMatch = false;
+    let priceOk =
+      priceFilter.value === "all" ||
+      (priceFilter.value === "0-500000" && price <= 500000) ||
+      (priceFilter.value === "500000-1000000" && price > 500000 && price <= 1000000) ||
+      (priceFilter.value === "1000000" && price > 1000000);
 
-    // PRICE FILTER
-    if (priceValue === "all") {
-      priceMatch = true;
-    } else if (priceValue === "0-500000") {
-      priceMatch = carPrice <= 500000;
-    } else if (priceValue === "500000-1000000") {
-      priceMatch = carPrice > 500000 && carPrice <= 1000000;
-    } else if (priceValue === "1000000") {
-      priceMatch = carPrice > 1000000;
-    }
+    let fuelOk =
+      fuelFilter.value === "all" || fuel === fuelFilter.value;
 
-    // FUEL FILTER
-    if (fuelValue === "all") {
-      fuelMatch = true;
-    } else {
-      fuelMatch = carFuel === fuelValue;
-    }
-
-    // SHOW / HIDE
-    if (priceMatch && fuelMatch) {
-      car.style.display = "block";
-    } else {
-      car.style.display = "none";
-    }
+    car.style.display = priceOk && fuelOk ? "block" : "none";
   });
 }
 
-// EVENT LISTENERS
-priceFilter.addEventListener("change", filterCars);
-fuelFilter.addEventListener("change", filterCars);
+if (priceFilter && fuelFilter) {
+  priceFilter.addEventListener("change", filterCars);
+  fuelFilter.addEventListener("change", filterCars);
+}
+
+/* ================= CONTACT FORM BORDER ================= */
+const contactFormElement = document.getElementById("contact-form");
+if (contactFormElement) {
+  contactFormElement.style.border = "2px solid #e63946";
+}
+
+/* ================= LOGOUT FUNCTION ================= */
+function logoutUser() {
+  localStorage.removeItem("isLoggedIn");
+  alert("Logged out successfully");
+  window.location.reload();
+}

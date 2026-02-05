@@ -15,27 +15,33 @@
     <div class="menu-toggle" onclick="toggleMenu()">☰</div>
 
     <ul class="nav-links">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="gallery.html">Gallery</a></li>
-      <li><a href="about.html">About</a></li>
-      <li><a href="contact.html" class="active">Contact</a></li>
-    </ul>
+  <li><a href="index.html">Home</a></li>
+  <li><a href="gallery.html">Gallery</a></li>
+  <li><a href="about.html" class="active">About</a></li>
+  <li><a href="#contact-form">Contact</a></li>
+  <li><a href="features.html">Features</a></li>
+  <li><a href="login.html">Login</a></li>
+  <li><a href="#" onclick="logoutUser()">Logout</a></li>
+</ul>
+
   </nav>
 
   <!-- Contact Section -->
-  <section class="contact-section">
+  <section class="contact-section" id="contact-form">
+
     <div class="contact-container">
 
       <h1>Contact Us</h1>
       <p>Have a question or want to buy a car? Get in touch with us!</p>
 
-      <form class="contact-form" onsubmit="submitForm(event)">
+<form class="contact-form" id="contact-form" onsubmit="submitForm(event)">
   <input type="text" id="name" placeholder="Your Name" required>
   <input type="email" id="email" placeholder="Your Email" required>
   <input type="tel" id="phone" placeholder="Phone Number" pattern="[0-9]{10}" title="Enter 10 digit phone number" required>
   <textarea id="message" placeholder="Your Message" rows="5" required></textarea><br>
   <button type="submit" class="frm-btn">Submit</button>
 </form>
+
 
 
     </div>

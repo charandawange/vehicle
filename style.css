@@ -815,3 +815,64 @@ body {
     margin: 5px;
   }
 }
+/* Login Box Container */
+.login-box {
+  width: 100%;
+  max-width: 360px;
+  margin: 120px auto;
+  padding: 30px 25px;
+  background: #ffffff;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+  border-radius: 10px;
+  text-align: center;
+}
+
+/* Heading (optional) */
+.login-box h2 {
+  margin-bottom: 20px;
+  color: #333;
+}
+
+/* Input Fields */
+.login-box input {
+  width: 100%;
+  padding: 12px 14px;
+  margin: 12px 0;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 14px;
+  outline: none;
+}
+
+/* Input focus effect */
+.login-box input:focus {
+  border-color: #e63946;
+  box-shadow: 0 0 5px rgba(230, 57, 70, 0.4);
+}
+
+/* Login Button */
+.login-box button {
+  width: 100%;
+  padding: 12px;
+  margin-top: 15px;
+  background: #e63946;
+  color: #ffffff;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+/* Button hover */
+.login-box button:hover {
+  background: #c92f3c;
+}
+
+/* Mobile friendly */
+@media (max-width: 480px) {
+  .login-box {
+    margin: 80px 15px;
+  }
+}
+
