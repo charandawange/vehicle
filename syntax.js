@@ -104,8 +104,6 @@ function submitForm(event) {
 
   alert("Form submitted successfully! ✅");
   document.querySelector(".contact-form").reset();
-
-  // Redirect back to index page after submission
   window.location.href = "index.html";
 }
 
@@ -146,6 +144,42 @@ if (contactFormElement) {
 /* ================= LOGOUT FUNCTION ================= */
 function logoutUser() {
   localStorage.removeItem("isLoggedIn");
+  localStorage.removeItem("username");
   alert("Logged out successfully");
-  window.location.reload();
+  updateNavbarUser();
+  // Redirect to login page
+  window.location.href = "login.html";
 }
+
+/* ================= NAVBAR LOGIN/USER ================= */
+function updateNavbarUser() {
+  const userSection = document.getElementById("user-section");
+  const username = localStorage.getItem("username");
+
+  if (username) {
+    const userHTML = `
+      <div class="user-dropdown">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS2KaNMyagvfKzOcmK1gLUutHcuDhOJVOHPb4S4WYHurfJ3VIzT9RH4D4bovrcwWhd6XaSDDWoL6SnjvTj52LVhufP5a18RxQsZdrB7stdH&s=10" alt="User Photo" class="user-photo">
+        <span class="user-name">${username}</span>
+        <div class="dropdown-content">
+          <a href="#">Profile</a>
+          <a href="#" onclick="logoutUser()">Logout</a>
+        </div>
+      </div>
+    `;
+    userSection.innerHTML = userHTML;
+  } else {
+    userSection.innerHTML = `<a href="login.html" id="login-btn">Login</a>`;
+  }
+}
+
+/* ================= LOGIN PROTECTION ON PAGE LOAD ================= */
+window.addEventListener("load", function() {
+  updateNavbarUser(); // Update navbar first
+  const isLoggedIn = localStorage.getItem("isLoggedIn");
+
+  // Redirect to login if not logged in, except on login.html
+  if (!isLoggedIn && !window.location.href.includes("login.html")) {
+    window.location.href = "login.html";
+  }
+});
