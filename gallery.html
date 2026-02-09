@@ -3,32 +3,32 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <title>Gallery</title>
+  <title>Gallery | True Cars</title>
   <link href="style.css" rel="stylesheet">
 </head>
-<body>
+<body class="home-bg">
 
- <nav class="navbar">
+<!-- Navbar -->
+<nav class="navbar">
   <div class="logo">True Cars</div>
-<div class="menu-toggle" onclick="toggleMenu()">☰</div>
+  <div class="menu-toggle" onclick="toggleMenu()">☰</div>
 
- <ul class="nav-links">
-  <li><a href="index.html">Home</a></li>
-  <li><a href="gallery.html">Gallery</a></li>
-  <li><a href="about.html" class="active">About</a></li>
-  <li><a href="#contact-form">Contact</a></li>
-  <li><a href="features.html">Features</a></li>
-  <li><a href="login.html">Login</a></li>
-  <li><a href="#" onclick="logoutUser()">Logout</a></li>
-</ul>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="gallery.html" class="active">Gallery</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="contact.html">Contact</a></li>
+    <li><a href="features.html">Features</a></li>
+  </ul>
 
+  <!-- ✅ USER SECTION -->
+  <div id="user-section"></div>
+</nav>
 
-  </nav>
 <h1>Gallery</h1>
 
 <div class="gallery">
-
+  <!-- BMW i8 -->
   <div class="gallery-item">
     <img src="https://wallpaperaccess.com/full/13652.jpg" onclick="openLightbox(this.src)">
     <div class="gallery-info">
@@ -38,6 +38,7 @@
     </div>
   </div>
 
+  <!-- Ferrari 488 -->
   <div class="gallery-item">
     <img src="https://wallpaperaccess.com/full/13650.jpg" onclick="openLightbox(this.src)">
     <div class="gallery-info">
@@ -47,6 +48,7 @@
     </div>
   </div>
 
+  <!-- Ferrari Roma -->
   <div class="gallery-item">
     <img src="https://img.freepik.com/premium-photo/red-sports-car-is-parked-alongside-road-with-vibrant-eyecatching-appearance-bright-red-ferrari-caught-sunset-light-ai-generated_585735-22208.jpg" onclick="openLightbox(this.src)">
     <div class="gallery-info">
@@ -56,6 +58,7 @@
     </div>
   </div>
 
+  <!-- Lamborghini Huracan -->
   <div class="gallery-item">
     <img src="https://wallpaperaccess.com/full/155161.jpg" onclick="openLightbox(this.src)">
     <div class="gallery-info">
@@ -65,6 +68,7 @@
     </div>
   </div>
 
+  <!-- Bugatti Chiron -->
   <div class="gallery-item">
     <img src="https://img.freepik.com/premium-photo/wallpaper-beautiful-car_935395-27929.jpg?w=996" onclick="openLightbox(this.src)">
     <div class="gallery-info">
@@ -74,6 +78,7 @@
     </div>
   </div>
 
+  <!-- Porsche 911 -->
   <div class="gallery-item">
     <img src="https://tse4.mm.bing.net/th/id/OIP.-IVakkp5sjqwMAj0LTmTGwHaE7" onclick="openLightbox(this.src)">
     <div class="gallery-info">
@@ -83,24 +88,7 @@
     </div>
   </div>
 
-  <div class="gallery-item">
-    <img src="https://img.freepik.com/premium-photo/row-classic-cars-display-museum_962508-62059.jpg" onclick="openLightbox(this.src)">
-    <div class="gallery-info">
-      <h3>Classic Cars Collection</h3>
-      <p>Year: 1960–1980</p>
-      <span>₹50,00,000+</span>
-    </div>
-  </div>
-
-  <div class="gallery-item">
-    <img src="https://th.bing.com/th/id/R.2e3fc935839d0b5506229eab1d1190bf?rik=UaTTwVhMdqcLjg&riu=http%3a%2f%2fwallup.net%2fwp-content%2fuploads%2f2016%2f01%2f208918-car-luxury_cars-zenvo-zenvo_st1.jpg&ehk=FK4OdXmjmcBqa5NWTWIoAyUZQNYtrJn3tzSRHQTDsbw%3d&risl=&pid=ImgRaw&r=0" onclick="openLightbox(this.src)">
-    <div class="gallery-info">
-      <h3>Zenvo ST1</h3>
-      <p>Year: 2020</p>
-      <span>₹8,50,00,000</span>
-    </div>
-  </div>
-
+  <!-- Audi R8 -->
   <div class="gallery-item">
     <img src="https://i.pinimg.com/736x/97/f4/21/97f4213b909b4bc514b42b69b3288e9e.jpg" onclick="openLightbox(this.src)">
     <div class="gallery-info">
@@ -110,6 +98,27 @@
     </div>
   </div>
 
+  <!-- Classic Cars Collection -->
+  <div class="gallery-item">
+    <img src="https://img.freepik.com/premium-photo/row-classic-cars-display-museum_962508-62059.jpg" onclick="openLightbox(this.src)">
+    <div class="gallery-info">
+      <h3>Classic Cars Collection</h3>
+      <p>Year: 1960–1980</p>
+      <span>₹50,00,000+</span>
+    </div>
+  </div>
+
+  <!-- Zenvo ST1 -->
+  <div class="gallery-item">
+    <img src="https://th.bing.com/th/id/R.2e3fc935839d0b5506229eab1d1190bf?rik=UaTTwVhMdqcLjg&riu=http%3a%2f%2fwallup.net%2fwp-content%2fuploads%2f2016%2f01%2f208918-car-luxury_cars-zenvo-zenvo_st1.jpg&ehk=FK4OdXmjmcBqa5NWTWIoAyUZQNYtrJn3tzSRHQTDsbw%3d&risl=&pid=ImgRaw&r=0" onclick="openLightbox(this.src)">
+    <div class="gallery-info">
+      <h3>Zenvo ST1</h3>
+      <p>Year: 2020</p>
+      <span>₹8,50,00,000</span>
+    </div>
+  </div>
+
+  <!-- Concept Hypercar -->
   <div class="gallery-item">
     <img src="https://img.freepik.com/premium-photo/exotic-cars-futuristic-sport-car_739685-7691.jpg" onclick="openLightbox(this.src)">
     <div class="gallery-info">
@@ -119,6 +128,7 @@
     </div>
   </div>
 
+  <!-- McLaren 720S -->
   <div class="gallery-item">
     <img src="https://tse2.mm.bing.net/th/id/OIP.evIzgi350zEEB-qRnjEdWQHaE8" onclick="openLightbox(this.src)">
     <div class="gallery-info">
@@ -128,6 +138,7 @@
     </div>
   </div>
 
+  <!-- Koenigsegg Jesko -->
   <div class="gallery-item">
     <img src="https://i.pinimg.com/736x/22/a3/ce/22a3ce16552a6670a111a8e054f1fe1a.jpg" onclick="openLightbox(this.src)">
     <div class="gallery-info">
@@ -137,6 +148,7 @@
     </div>
   </div>
 
+  <!-- Rolls Royce Wraith -->
   <div class="gallery-item">
     <img src="https://octane.rent/wp-content/uploads/2023/05/rolls-royce-wraith-white-3.webp" onclick="openLightbox(this.src)">
     <div class="gallery-info">
@@ -146,6 +158,7 @@
     </div>
   </div>
 
+  <!-- Mercedes AMG GT -->
   <div class="gallery-item">
     <img src="https://tse3.mm.bing.net/th/id/OIP.Jfz-Kv9e0MJRSTlEucElnAHaEK" onclick="openLightbox(this.src)">
     <div class="gallery-info">
@@ -155,6 +168,7 @@
     </div>
   </div>
 
+  <!-- Volvo Cargo Truck -->
   <div class="gallery-item">
     <img src="https://static.vecteezy.com/system/resources/thumbnails/044/520/058/small_2x/ai-generated-system-transport-and-logistics-of-truk-container-cargo-generative-ai-photo.jpg" onclick="openLightbox(this.src)">
     <div class="gallery-info">
@@ -166,10 +180,13 @@
 
 </div>
 
+<!-- Lightbox -->
 <div id="lightbox" onclick="closeLightbox()">
   <span class="close">&times;</span>
   <img id="lightbox-img">
 </div>
+
+<!-- Footer -->
 <footer class="footer">
   <p> Created By- Charan Dawange</p>
   <div class="socials">
@@ -178,6 +195,7 @@
     <a href="#">Instagram</a>
   </div>
 </footer>
-</body>
+
 <script src="syntax.js"></script>
+</body>
 </html>

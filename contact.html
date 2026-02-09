@@ -15,15 +15,15 @@
     <div class="menu-toggle" onclick="toggleMenu()">☰</div>
 
     <ul class="nav-links">
-  <li><a href="index.html">Home</a></li>
-  <li><a href="gallery.html">Gallery</a></li>
-  <li><a href="about.html" class="active">About</a></li>
-  <li><a href="#contact-form">Contact</a></li>
-  <li><a href="features.html">Features</a></li>
-  <li><a href="login.html">Login</a></li>
-  <li><a href="#" onclick="logoutUser()">Logout</a></li>
-</ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="gallery.html">Gallery</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html" class="active">Contact</a></li>
+      <li><a href="features.html">Features</a></li>
+    </ul>
 
+    <!-- ✅ USER SECTION -->
+    <div id="user-section"></div>
   </nav>
 
   <!-- Contact Section -->
@@ -34,33 +34,32 @@
       <h1>Contact Us</h1>
       <p>Have a question or want to buy a car? Get in touch with us!</p>
 
-<form class="contact-form" id="contact-form" onsubmit="submitForm(event)">
-  <input type="text" id="name" placeholder="Your Name" required>
-  <input type="email" id="email" placeholder="Your Email" required>
-  <input type="tel" id="phone" placeholder="Phone Number" pattern="[0-9]{10}" title="Enter 10 digit phone number" required>
-  <textarea id="message" placeholder="Your Message" rows="5" required></textarea><br>
-  <button type="submit" class="frm-btn">Submit</button>
-</form>
-
-
+      <form class="contact-form" onsubmit="submitForm(event)">
+        <input type="text" id="name" placeholder="Your Name" required>
+        <input type="email" id="email" placeholder="Your Email" required>
+        <input type="tel" id="phone" placeholder="Phone Number"
+               pattern="[0-9]{10}" title="Enter 10 digit phone number" required>
+        <textarea id="message" placeholder="Your Message" rows="5" required></textarea>
+        <br>
+        <button type="submit" class="frm-btn">Submit</button>
+      </form>
 
     </div>
+
     <!-- Google Map -->
-<div class="map-container">
-  <iframe
-    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3783.274015672019!2d73.856743!3d18.520430!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2c1e8b3e3b6db%3A0x123456789abcdef!2sPune%2C%20Maharashtra!5e0!3m2!1sen!2sin!4v1700000000000"
-    width="100%"
-    height="350"
-    style="border:0;"
-    allowfullscreen=""
-    loading="lazy"
-    referrerpolicy="no-referrer-when-downgrade">
-  </iframe>
-</div>
+    <div class="map-container">
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3783.274015672019!2d73.856743!3d18.520430!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2c1e8b3e3b6db%3A0x123456789abcdef!2sPune%2C%20Maharashtra!5e0!3m2!1sen!2sin!4v1700000000000"
+        width="100%"
+        height="350"
+        style="border:0;"
+        allowfullscreen=""
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade">
+      </iframe>
+    </div>
 
   </section>
-
-  
 
   <!-- Footer -->
   <footer class="footer">
@@ -72,6 +71,7 @@
     </div>
   </footer>
 
+  <!-- ✅ COMMON JS -->
   <script src="syntax.js"></script>
 </body>
 </html>

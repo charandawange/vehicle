@@ -183,3 +183,83 @@ window.addEventListener("load", function() {
     window.location.href = "login.html";
   }
 });
+//test drive
+function bookTestDrive() {
+  const car = document.getElementById('car').value.trim();
+  const name = document.getElementById('td-name').value.trim();
+  const email = document.getElementById('td-email').value.trim();
+  const phone = document.getElementById('td-phone').value.trim();
+  const date = document.getElementById('date').value;
+  const time = document.getElementById('time').value;
+
+  // Check for empty fields
+  if (!car) {
+    alert('Please select a car.');
+    return;
+  }
+  if (!date) {
+    alert('Please select a date.');
+    return;
+  }
+  if (!time) {
+    alert('Please select a time.');
+    return;
+  }
+  if (!name) {
+    alert('Please enter your name.');
+    return;
+  }
+  if (!email) {
+    alert('Please enter your email.');
+    return;
+  }
+  if (!phone) {
+    alert('Please enter your phone number.');
+    return;
+  }
+
+  // Email validation regex
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  if (!emailRegex.test(email)) {
+    alert('Please enter a valid email address.');
+    return;
+  }
+
+  // Phone validation: digits only, 10 to 15 length
+  const phoneRegex = /^\d{10,15}$/;
+  if (!phoneRegex.test(phone)) {
+    alert('Please enter a valid phone number (10 to 15 digits).');
+    return;
+  }
+
+  // Date validation: must be today or later
+  const selectedDate = new Date(date);
+  const today = new Date();
+  today.setHours(0, 0, 0, 0);
+  if (selectedDate < today) {
+    alert('Please select a valid date (today or in the future).');
+    return;
+  }
+
+  // Time validation: 24-hour format HH:mm
+  const timeRegex = /^([01]\d|2[0-3]):([0-5]\d)$/;
+  if (!timeRegex.test(time)) {
+    alert('Please enter a valid time (HH:mm, 24-hour format).');
+    return;
+  }
+
+  // Save booking to localStorage (demo)
+  let bookings = JSON.parse(localStorage.getItem('testDriveBookings') || '[]');
+  bookings.push({ car, name, email, phone, date, time });
+  localStorage.setItem('testDriveBookings', JSON.stringify(bookings));
+
+  alert(`Test drive booked!\nCar: ${car}\nDate: ${date}\nTime: ${time}`);
+
+  // Reset form fields
+  document.getElementById('car').value = '';
+  document.getElementById('td-name').value = '';
+  document.getElementById('td-email').value = '';
+  document.getElementById('td-phone').value = '';
+  document.getElementById('date').value = '';
+  document.getElementById('time').value = '';
+}
