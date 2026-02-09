@@ -12,11 +12,12 @@
   <div class="menu-toggle" onclick="toggleMenu()">☰</div>
 
   <ul class="nav-links">
-    <li><a href="index.html">Home</a></li>
+    <li><a href="index.html" class="active">Home</a></li>
     <li><a href="gallery.html">Gallery</a></li>
-    <li><a href="about.html" class="active">About</a></li>
+    <li><a href="about.html">About</a></li>
     <li><a href="#contact-form">Contact</a></li>
     <li><a href="features.html">Features</a></li>
+    <li><a href="testmonial.html">Testimonials</a></li>
   </ul>
 
   <!-- User/Profile section -->
@@ -34,40 +35,6 @@
   <button class="prev">❮</button>
   <button class="next">❯</button>
 </div>
-<!-- ===================== TEST DRIVE SECTION ===================== -->
-<section class="test-drive-section" id="test-drive">
-  <h2>Book a Test Drive</h2>
-  <p>Pick your favorite car and schedule a test drive at your convenience!</p>
-
-  <div class="test-drive-container">
-    <label for="car">Select Car:</label>
-    <select id="car">
-      <option value="" disabled selected>Select a car</option>
-      <option value="BMW M4">BMW M4</option>
-      <option value="Audi R8">Audi R8</option>
-      <option value="Mercedes AMG GT">Mercedes AMG GT</option>
-      <option value="Porsche 911">Porsche 911</option>
-    </select>
-
-    <label for="date">Select Date:</label>
-    <input type="date" id="date">
-
-    <label for="time">Select Time:</label>
-    <input type="time" id="time">
-
-    <label for="name">Your Name:</label>
-    <input type="text" id="td-name" placeholder="Enter your name">
-
-    <label for="email">Your Email:</label>
-    <input type="email" id="td-email" placeholder="Enter your email">
-
-    <label for="phone">Phone Number:</label>
-    <input type="tel" id="td-phone" placeholder="Enter your phone number">
-
-    <button type="button" onclick="bookTestDrive()">Book Now</button>
-  </div>
-</section>
-
 
 
 
@@ -469,6 +436,42 @@
     </div>
   </div>
 </section>
+
+<!-- ===================== TEST DRIVE SECTION ===================== -->
+<section class="test-drive-section" id="test-drive">
+  <h2>Book a Test Drive</h2>
+  <p>Pick your favorite car and schedule a test drive at your convenience!</p>
+
+  <div class="test-drive-container">
+    <label for="car">Select Car:</label>
+    <select id="car">
+      <option value="" disabled selected>Select a car</option>
+      <option value="BMW M4">BMW M4</option>
+      <option value="Audi R8">Audi R8</option>
+      <option value="Mercedes AMG GT">Mercedes AMG GT</option>
+      <option value="Porsche 911">Porsche 911</option>
+    </select>
+
+    <label for="date">Select Date:</label>
+    <input type="date" id="date">
+
+    <label for="time">Select Time:</label>
+    <input type="time" id="time">
+
+    <label for="name">Your Name:</label>
+    <input type="text" id="td-name" placeholder="Enter your name">
+
+    <label for="email">Your Email:</label>
+    <input type="email" id="td-email" placeholder="Enter your email">
+
+    <label for="phone">Phone Number:</label>
+    <input type="tel" id="td-phone" placeholder="Enter your phone number">
+
+    <button type="button" onclick="bookTestDrive()">Book Now</button>
+  </div>
+</section>
+
+
 <!-- Video Section -->
 <section class="video-section">
   <div class="video-wrapper">
@@ -483,17 +486,89 @@
     </div>
   </div>
 </section>
+<!-- Testimonials Section -->
+<section id="testimonials" >
+  <h2 class="section-title">What Our Customers Say</h2>
+  <p class="section-subtitle">Real reviews from our happy customers</p>
+
+  <div class="testimonials">
+
+    <div class="testimonial-card">
+      <p class="review">
+        “True Cars se BMW i8 kharidna ek amazing experience tha.  
+        Service top-class aur delivery time par hui.”
+      </p>
+      <h3>Rahul Sharma</h3>
+      <span>Mumbai | BMW i8</span>
+    </div>
+
+    <div class="testimonial-card">
+      <p class="review">
+        “Luxury cars ke liye agar koi trusted place hai to wo True Cars hai.  
+        Highly recommended!”
+      </p>
+      <h3>Ananya Verma</h3>
+      <span>Delhi | Mercedes AMG GT</span>
+    </div>
+
+    <div class="testimonial-card">
+      <p class="review">
+        “Ferrari Roma ka experience next level tha.  
+        Staff bahut cooperative aur professional tha.”
+      </p>
+      <h3>Rohit Mehta</h3>
+      <span>Pune | Ferrari Roma</span>
+    </div>
+
+    <div class="testimonial-card">
+      <p class="review">
+        “True Cars ne mujhe meri dream car dilayi – Lamborghini Huracan.  
+        Smooth process & transparent pricing.”
+      </p>
+      <h3>Karan Patel</h3>
+      <span>Ahmedabad | Lamborghini Huracan</span>
+    </div>
+
+  </div>
+</section>
 
 
 
+<!-- Footer -->
 <footer class="footer">
-  <p> Created By- Charan Dawange</p>
-  <div class="socials">
-    <a href="#">Facebook</a>
-    <a href="#">Twitter</a>
-    <a href="#">Instagram</a>
+  <div class="footer-container">
+    <div class="footer-brand">
+      <h2>True Cars</h2>
+      <p>Experience luxury like never before.</p>
+    </div>
+
+    <div class="footer-links">
+      <h3>Quick Links</h3>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="features.html">Features</a></li>
+        <li><a href="#testimonials">Testimonials</a></li>
+        <li><a href="#contact-form">Contact</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-socials">
+      <h3>Follow Us</h3>
+      <div class="social-icons">
+        <a href="#" class="social-icon">🌐</a>
+        <a href="#" class="social-icon">📘</a>
+        <a href="#" class="social-icon">🐦</a>
+        <a href="#" class="social-icon">📸</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <p>© 2026 True Cars. All Rights Reserved. Created by Charan Dawange.</p>
   </div>
 </footer>
+
 
 </body>
 <script src="syntax.js"></script>

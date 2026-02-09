@@ -5,7 +5,7 @@
 }
 body{
   /* https://img.freepik.com/premium-photo/black-maserati-sports-car-is-parked-street-front-restaurant_900321-55342.jpg */
-  background-image: url("https://wallpapers.com/images/hd/opulent-luxury-background-a-glimpse-of-affluence-tgct9mzrtobodz8m.jpg");
+  background-image: url("https://images.pexels.com/photos/638479/pexels-photo-638479.jpeg?cs=srgb&dl=pexels-vraj-shah-115200-638479.jpg&fm=jpg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -138,9 +138,9 @@ button  {
   max-width: 1100px;      /* aligns with your container max widths */
   margin: 0 auto 40px;
   padding: 0 20px;
-  background: rgba(255, 255, 255, 0.85);
+  background: transparent;
   border-radius: 12px;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 8px 20px rgba(248, 156, 156, 0.849);
 }
 
 .test-drive-container {
@@ -173,7 +173,7 @@ button  {
 .test-drive-container select {
   padding: 12px 14px;
   border-radius: 6px;
-  border: 1px solid #ccc;
+  border: 1px solid red;
   font-size: 16px;
   outline: none;
   width: 100%;
@@ -248,31 +248,92 @@ button  {
 .product-card button:hover {
   background: hsl(0, 100%, 48%);
 }
-
-/* 🔹 FOOTER */
 .footer {
- 
-  color: white;
-  text-align: center;
-  padding: 20px;
-  margin-top: 40px;
+  background: linear-gradient(135deg, #111, #222);
+  color: #fff;
+  padding: 50px 20px 20px;
+  font-family: 'Arial', sans-serif;
 }
 
-.footer p {
+.footer-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 30px;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.footer-brand h2 {
+  font-size: 28px;
+  color: #ff9800;
   margin-bottom: 10px;
-  font-size: 14px;
 }
 
-.socials a {
-  color: yellowgreen;
-  margin: 0 10px;
+.footer-brand p {
+  font-size: 14px;
+  color: #ccc;
+}
+
+.footer-links h3,
+.footer-socials h3 {
+  font-size: 18px;
+  margin-bottom: 15px;
+  color: #ff9800;
+}
+
+.footer-links ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-links ul li {
+  margin-bottom: 10px;
+}
+
+.footer-links ul li a {
   text-decoration: none;
-  font-size: 14px;
+  color: #ccc;
+  transition: 0.3s;
 }
 
-.socials a:hover {
-  text-decoration: underline;
+.footer-links ul li a:hover {
+  color: #ff9800;
 }
+
+.footer-socials .social-icons {
+  display: flex;
+  gap: 15px;
+}
+
+.footer-socials .social-icon {
+  font-size: 20px;
+  display: inline-block;
+  background: #333;
+  padding: 10px;
+  border-radius: 50%;
+  color: #fff;
+  transition: 0.3s;
+  text-align: center;
+  width: 40px;
+  height: 40px;
+  line-height: 20px;
+}
+
+.footer-socials .social-icon:hover {
+  background: #ff9800;
+  color: #111;
+}
+
+.footer-bottom {
+  text-align: center;
+  margin-top: 30px;
+  font-size: 13px;
+  color: #aaa;
+  border-top: 1px solid #333;
+  padding-top: 15px;
+}
+
  /* Modal (Zoom Image) Styles */
         .modal {
             display: none;
@@ -341,7 +402,7 @@ h1 {
 }
 
 .gallery-item {
-  background: #fff;
+  background: transparent;
   border-radius: 10px;
   overflow: hidden;
   box-shadow: 0 4px 10px rgba(0,0,0,0.1);
@@ -993,4 +1054,112 @@ body {
 
 .user-dropdown:hover .dropdown-content {
   display: block;
+}
+
+/* Testimonials Section */  
+.page-title {
+  text-align: center;
+  margin-top: 100px;
+  font-size: 36px;
+  color: #fff;
+}
+
+.page-subtitle {
+  text-align: center;
+  color: #ddd;
+  margin-bottom: 40px;
+}
+
+.testimonials {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 25px;
+  padding: 0 40px 60px;
+}
+
+.testimonial-card {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(8px);
+  padding: 25px;
+  border-radius: 15px;
+  color: #fff;
+  transition: 0.3s ease;
+}
+
+.testimonial-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+}
+
+.testimonial-card .review {
+  font-style: italic;
+  margin-bottom: 15px;
+}
+
+.testimonial-card h3 {
+  margin: 0;
+  color: #ff9800;
+}
+
+.testimonial-card span {
+  font-size: 14px;
+  color: #ccc;
+}
+/* 1. Perspective for the whole page */
+body {
+    perspective: 1200px;
+    transform-style: preserve-3d;
+    background: linear-gradient(120deg, #0f0f0f, #1a1a1a);
+    color: #fff;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* 2. Navbar 3D hover */
+.nav-links li a {
+    transition: transform 0.3s ease, text-shadow 0.3s ease;
+}
+.nav-links li a:hover {
+    transform: translateZ(15px) rotateX(3deg);
+    text-shadow: 0 5px 15px rgba(0,0,0,0.5);
+}
+
+/* 3. Slider / Featured Cars 3D hover */
+.slider img,
+.product-card,
+.car-card,
+.gallery-item,
+.video-wrapper video {
+    transition: transform 0.5s ease, box-shadow 0.5s ease;
+    transform-style: preserve-3d;
+    border-radius: 15px;
+}
+
+.slider img:hover,
+.product-card:hover,
+.car-card:hover,
+.gallery-item:hover,
+.video-wrapper:hover video {
+    transform: rotateY(10deg) rotateX(5deg) translateZ(20px) scale(1.05);
+    box-shadow: 0 30px 50px rgba(0,0,0,0.7);
+}
+
+/* 4. Neon glow headings */
+h1, h2, h3 {
+    text-shadow: 0 0 10px #fff, 0 0 20px #ff0000, 0 0 30px #ff0000;
+}
+
+/* 5. Parallax sections (optional) */
+.section, .test-drive-section, .features-section, .featured-cars {
+    transform-style: preserve-3d;
+    perspective: 1000px;
+    background-attachment: fixed;
+}
+
+/* 6. Smooth hover for buttons */
+button, .buy-btn, .frm-btn {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+button:hover, .buy-btn:hover, .frm-btn:hover {
+    transform: translateZ(10px) scale(1.05);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.5);
 }

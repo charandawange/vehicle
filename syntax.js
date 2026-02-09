@@ -263,3 +263,7 @@ function bookTestDrive() {
   document.getElementById('date').value = '';
   document.getElementById('time').value = '';
 }
+// Disable right click
+document.addEventListener("contextmenu", function(e) {
+  e.preventDefault();
+});
