@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Car Details - True Cars</title>
+  <link rel="stylesheet" href="details.css">
+</head>
+<body>
+
+<div class="details-container" id="carDetails"></div>
+
+<script>
+
+const carData = {
+
+  "bmw-x5": {
+    name: "BMW X5",
+    price: "₹75,00,000",
+    image: "https://www.sueddeutsche.de/2022/06/08/e4b394b2-de28-45e5-9705-406b2496f312.jpeg?q=60&fm=jpeg&width=1000&rect=70%2C146%2C1252%2C704",
+    engine: "3.0L TwinPower Turbo Inline-6",
+    mileage: "12 km/l",
+    fuel: "Petrol",
+    transmission: "Automatic",
+    topSpeed: "250 km/h",
+    seating: "5 Seater",
+    features: [
+      "Panoramic Sunroof",
+      "360° Camera",
+      "Digital Instrument Cluster",
+      "Leather Seats",
+      "6 Airbags",
+      "ADAS Safety"
+    ]
+  },
+
+  "audi-q7": {
+    name: "Audi Q7",
+    price: "₹82,00,000",
+    image: "https://www.ultimatecarpage.com/images/car/6006/BMW-X5-M-50377.jpg",
+    engine: "3.0L V6 TFSI",
+    mileage: "11 km/l",
+    fuel: "Petrol",
+    transmission: "Automatic",
+    topSpeed: "245 km/h",
+    seating: "7 Seater",
+    features: [
+      "Quattro AWD",
+      "Virtual Cockpit",
+      "Premium Sound System",
+      "Matrix LED Headlights"
+    ]
+  },
+
+  "mercedes-glc": {
+    name: "Mercedes GLC",
+    price: "₹68,00,000",
+    image: "https://www.motortrend.com/uploads/2023/05/014-2023-mercedes-benz-glc-30-1.jpg",
+    engine: "2.0L Turbocharged",
+    mileage: "14 km/l",
+    fuel: "Petrol",
+    transmission: "Automatic",
+    topSpeed: "240 km/h",
+    seating: "5 Seater",
+    features: [
+      "MBUX Infotainment",
+      "Ambient Lighting",
+      "Wireless Charging",
+      "Blind Spot Assist"
+    ]
+  },
+
+  "range-rover": {
+    name: "Range Rover",
+    price: "₹1,20,00,000",
+    image: "https://www.motortrend.com/files/67abe44bb59a9e0008e34fa0/1-2025-land-rover-range-rover-front-view.jpg",
+    engine: "3.0L Diesel",
+    mileage: "10 km/l",
+    fuel: "Diesel",
+    transmission: "Automatic",
+    topSpeed: "230 km/h",
+    seating: "5 Seater",
+    features: [
+      "Terrain Response System",
+      "Meridian Sound System",
+      "Air Suspension",
+      "360° Surround Camera"
+    ]
+  },
+
+  "mahindra-thar": {
+    name: "Mahindra Thar",
+    price: "₹20,00,000",
+    image: "https://www.dadamotors.com/all/superadmin/carimage2/mahindra-thar-2.webp",
+    engine: "2.2L mHawk Diesel",
+    mileage: "15 km/l",
+    fuel: "Diesel",
+    transmission: "Manual / Automatic",
+    topSpeed: "155 km/h",
+    seating: "4 Seater",
+    features: [
+      "4x4 Drive",
+      "Touchscreen Infotainment",
+      "Cruise Control",
+      "Dual Airbags"
+    ]
+  },
+
+  "mahindra-scorpio": {
+    name: "Mahindra Scorpio",
+    price: "₹15,00,000",
+    image: "https://media.zigcdn.com/media/model/2025/Dec/mahindra-scorpio1_600x400.jpg",
+    engine: "2.2L Diesel",
+    mileage: "16 km/l",
+    fuel: "Diesel",
+    transmission: "Manual",
+    topSpeed: "165 km/h",
+    seating: "7 Seater",
+    features: [
+      "LED DRLs",
+      "Rear Parking Camera",
+      "Touchscreen Display",
+      "ABS with EBD"
+    ]
+  },
+
+  "hyundai-verna": {
+    name: "Hyundai Verna",
+    price: "₹25,00,000",
+    image: "https://stimg.cardekho.com/images/carexteriorimages/630x420/Hyundai/Verna/7729/1616055133475/front-left-side-47.jpg",
+    engine: "1.5L Petrol",
+    mileage: "18 km/l",
+    fuel: "Petrol",
+    transmission: "Automatic",
+    topSpeed: "190 km/h",
+    seating: "5 Seater",
+    features: [
+      "Ventilated Seats",
+      "Bose Sound System",
+      "Sunroof",
+      "6 Airbags"
+    ]
+  },
+
+  "honda-creta": {
+    name: "Hyundai Creta",
+    price: "₹18,00,000",
+    image: "https://media.zigcdn.com/media/content/2017/Apr/2017-hyundai-creta-1.jpg",
+    engine: "1.5L Petrol",
+    mileage: "17 km/l",
+    fuel: "Petrol",
+    transmission: "Automatic",
+    topSpeed: "180 km/h",
+    seating: "5 Seater",
+    features: [
+      "Panoramic Sunroof",
+      "Wireless Android Auto",
+      "Rear AC Vents",
+      "Electronic Stability Control"
+    ]
+  },
+
+  "honda-city": {
+    name: "Honda City",
+    price: "₹10,00,000",
+    image: "https://imgd.aeplcdn.com/664x374/n/cw/ec/134287/city-exterior-right-front-three-quarter-2.png",
+    engine: "1.5L i-VTEC",
+    mileage: "18 km/l",
+    fuel: "Petrol",
+    transmission: "Manual / Automatic",
+    topSpeed: "195 km/h",
+    seating: "5 Seater",
+    features: [
+      "Lane Watch Camera",
+      "Touchscreen Display",
+      "Push Start Button",
+      "Cruise Control"
+    ]
+  },
+
+  "tata-safari": {
+    name: "Tata Safari",
+    price: "₹18,00,000",
+    image: "https://cdni.autocarindia.com/ExtraImages/20210204105942_2021_Tata_Safari_white_front.jpg",
+    engine: "2.0L Kryotec Diesel",
+    mileage: "16 km/l",
+    fuel: "Diesel",
+    transmission: "Manual / Automatic",
+    topSpeed: "175 km/h",
+    seating: "7 Seater",
+    features: [
+      "Panoramic Sunroof",
+      "JBL Sound System",
+      "6 Airbags",
+      "Hill Hold Control"
+    ]
+  }
+
+};
+
+const params = new URLSearchParams(window.location.search);
+const carId = params.get("car");
+const car = carData[carId];
+
+if (car) {
+  document.getElementById("carDetails").innerHTML = `
+    
+    <div class="car-image">
+      <img src="${car.image}" alt="${car.name}">
+    </div>
+
+    <h1>${car.name}</h1>
+    <h2>${car.price}</h2>
+
+    <h3>Specifications</h3>
+    <p><b>Engine:</b> ${car.engine}</p>
+    <p><b>Mileage:</b> ${car.mileage}</p>
+    <p><b>Fuel:</b> ${car.fuel}</p>
+    <p><b>Transmission:</b> ${car.transmission}</p>
+    <p><b>Top Speed:</b> ${car.topSpeed}</p>
+    <p><b>Seating Capacity:</b> ${car.seating}</p>
+
+    <h3>Features</h3>
+    <ul>
+      ${car.features.map(f => `<li>${f}</li>`).join("")}
+    </ul>
+
+    <h3>EMI Calculator</h3>
+
+<div class="emi-box">
+  <input type="number" id="loanAmount" placeholder="Loan Amount (₹)" value="${car.price.replace(/[^0-9]/g,'')}">
+  <input type="number" id="interestRate" placeholder="Interest Rate (%)" value="9">
+  <input type="number" id="loanTenure" placeholder="Loan Tenure (Years)" value="5">
+
+  <button onclick="calculateEMI()" class="emi-btn">Calculate EMI</button>
+
+  <div id="emiResult"></div>
+</div>
+
+    <button onclick="history.back()" class="back-btn">⬅ Go Back</button>
+  `;
+}
+function calculateEMI() {
+
+  let P = document.getElementById("loanAmount").value;
+  let annualRate = document.getElementById("interestRate").value;
+  let years = document.getElementById("loanTenure").value;
+
+  let R = annualRate / 12 / 100;
+  let N = years * 12;
+
+  let EMI = (P * R * Math.pow(1 + R, N)) / (Math.pow(1 + R, N) - 1);
+  EMI = EMI.toFixed(0);
+
+  let totalPayment = EMI * N;
+  let totalInterest = totalPayment - P;
+
+  document.getElementById("emiResult").innerHTML = `
+    <p><b>Monthly EMI:</b> ₹${EMI}</p>
+    <p><b>Total Interest:</b> ₹${totalInterest.toFixed(0)}</p>
+    <p><b>Total Payment:</b> ₹${totalPayment.toFixed(0)}</p>
+  `;
+}
+
+</script>
+
+</body>
+</html>

@@ -3,6 +3,11 @@ function toggleMenu() {
   document.querySelector(".nav-links").classList.toggle("show");
 }
 
+window.addEventListener("load", function(){
+  document.getElementById("preloader").style.display="none";
+});
+
+
 /* ================= SLIDER ================= */
 const slides = document.querySelectorAll('.slide');
 let index = 0;
@@ -72,40 +77,7 @@ function buyNow(carName) {
   }
 }
 
-/* ================= CONTACT FORM ================= */
-function submitForm(event) {
-  event.preventDefault();
 
-  const name = document.getElementById("name").value.trim();
-  const email = document.getElementById("email").value.trim();
-  const phone = document.getElementById("phone").value.trim();
-  const message = document.getElementById("message").value.trim();
-
-  if (name.length < 3) {
-    alert("Please enter a valid name (at least 3 characters).");
-    return;
-  }
-
-  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-  if (!emailRegex.test(email)) {
-    alert("Please enter a valid email address.");
-    return;
-  }
-
-  if (!/^[0-9]{10}$/.test(phone)) {
-    alert("Please enter a valid 10-digit phone number.");
-    return;
-  }
-
-  if (message.length < 10) {
-    alert("Message should be at least 10 characters.");
-    return;
-  }
-
-  alert("Form submitted successfully! ✅");
-  document.querySelector(".contact-form").reset();
-  window.location.href = "index.html";
-}
 
 /* ================= FEATURED CARS FILTER ================= */
 const priceFilter = document.getElementById("priceFilter");
@@ -159,7 +131,7 @@ function updateNavbarUser() {
   if (username) {
     const userHTML = `
       <div class="user-dropdown">
-        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS2KaNMyagvfKzOcmK1gLUutHcuDhOJVOHPb4S4WYHurfJ3VIzT9RH4D4bovrcwWhd6XaSDDWoL6SnjvTj52LVhufP5a18RxQsZdrB7stdH&s=10" alt="User Photo" class="user-photo">
+        <img id="profile-pic" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS2KaNMyagvfKzOcmK1gLUutHcuDhOJVOHPb4S4WYHurfJ3VIzT9RH4D4bovrcwWhd6XaSDDWoL6SnjvTj52LVhufP5a18RxQsZdrB7stdH&s=10" alt="User Photo" class="user-photo">
         <span class="user-name">${username}</span>
         <div class="dropdown-content">
           <a href="#">Profile</a>
@@ -263,7 +235,62 @@ function bookTestDrive() {
   document.getElementById('date').value = '';
   document.getElementById('time').value = '';
 }
-// Disable right click
-document.addEventListener("contextmenu", function(e) {
-  e.preventDefault();
+// // Disable right click
+// document.addEventListener("contextmenu", function(e) {
+//   e.preventDefault();
+// });
+// window.onload = () => {
+//   document.getElementById("preloader").style.display = "none";
+// };
+
+
+function addToWishlist(name, image, price, btn) {
+
+  let wishlist = JSON.parse(localStorage.getItem("wishlist")) || [];
+
+  let alreadyAdded = wishlist.find(item => item.name === name);
+
+  if (alreadyAdded) {
+    alert("Already in wishlist ❤️");
+    return;
+  }
+
+  let car = { name, image, price };
+  wishlist.push(car);
+
+  localStorage.setItem("wishlist", JSON.stringify(wishlist));
+
+  // heart ko red karo
+  btn.classList.add("active");
+
+  alert(name + " added to wishlist ❤️");
+}
+
+
+// see more
+
+document.querySelectorAll(".see-more-btn").forEach(btn => {
+  btn.addEventListener("click", function(){
+
+    let card = this.closest(".gallery-item");
+
+    document.getElementById("carModal").style.display = "flex";
+
+    document.getElementById("modalName").innerText = card.dataset.name;
+    document.getElementById("modalEngine").innerText = "Engine: " + card.dataset.engine;
+    document.getElementById("modalMileage").innerText = "Mileage: " + card.dataset.mileage;
+    document.getElementById("modalDemand").innerText = "Demand: " + card.dataset.demand;
+    document.getElementById("modalFeatures").innerText = "Features: " + card.dataset.features;
+  });
 });
+
+function closeCarInfo(){
+  document.getElementById("carModal").style.display = "none";
+}
+
+function viewDetails(car) {
+    window.location.href = "car-details.html?car=" + car;
+}
+function toggleMenu() {
+  document.querySelector(".nav-links").classList.toggle("show");
+}

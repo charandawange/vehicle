@@ -7,6 +7,10 @@
     <link href="style.css" rel="stylesheet">
 </head>
 <body>
+  <div id="preloader">
+  <div class="loader"></div>
+</div>
+
  <nav class="navbar">
   <div class="logo">True Cars</div>
   <div class="menu-toggle" onclick="toggleMenu()">☰</div>
@@ -18,13 +22,41 @@
     <li><a href="#contact-form">Contact</a></li>
     <li><a href="features.html">Features</a></li>
     <li><a href="testmonial.html">Testimonials</a></li>
+    <li><a href="wishlist.html">Wishlist ❤️</a></li>
+
   </ul>
 
   <!-- User/Profile section -->
-  <div id="user-section">
-    <a href="login.html" id="login-btn">Login</a>
+ <div id="user-section">
+  <div class="profile-box">
+   
   </div>
+</div>
 </nav>
+<div class="hero">
+  <div class="hero-content">
+    <h4>Welcome to True Cars</h4>
+    <h1>Discover Your Dream Car</h1>
+    <p>
+      Explore our exclusive collection of luxury and performance vehicles.
+      Find your perfect match and experience the thrill of driving.
+    </p>
+    <a href="#test-drive" class="btn">Book a Test Drive</a>
+  </div>
+</div>
+<!-- ===================== HERO SECTION ===================== -->
+<section class="gallery-hero">
+  <h1>Drive Your Dream With True Cars</h1>
+  <p>
+    Luxury • Performance • Trust  
+    India's Premium Car Destination
+  </p>
+  <div class="hero-buttons">
+    <a href="#carsGrid" class="primary-btn">Explore Cars</a>
+    <a href="#test-drive" class="secondary-btn">Book Test Drive</a>
+  </div>
+</section>
+
 
 
 <div class="slider">
@@ -46,6 +78,7 @@
     <h3>BMW X5</h3>
     <p class="price">₹75,00,000</p>
     <button class="buy-btn" onclick="buyNow('BMW X5')">Buy Now</button>
+    <button class="see-more-btn" onclick="viewDetails('bmw-x5')">See More Details</button>
     
   </div>
 
@@ -54,6 +87,8 @@
     <h3>Audi Q7</h3>
     <p class="price">₹82,00,000</p>
     <button class="buy-btn" onclick="buyNow('Audi Q7')">Buy Now</button>
+    <button class="see-more-btn" onclick="viewDetails('audi-q7')">See More Details</button>
+
     
   </div>
 
@@ -62,6 +97,7 @@
     <h3>Mercedes GLC</h3>
     <p class="price">₹68,00,000</p>
     <button class="buy-btn" onclick="buyNow('Mercedes GLC')">Buy Now</button>
+    <button class="see-more-btn" onclick="viewDetails('mercedes-glc')">See More Details</button>
    
   </div>
 
@@ -70,6 +106,7 @@
     <h3>Range Rover</h3>
     <p class="price">₹1,20,00,000</p>
     <button class="buy-btn" onclick="buyNow('Range Rover')">Buy Now</button>
+    <button class="see-more-btn" onclick="viewDetails('range-rover')">See More Details</button>
  
   </div>
    <div class="product-card">
@@ -77,6 +114,7 @@
     <h3>Mahindra Thar</h3>
     <p class="price">₹20,00,000</p>
     <button class="buy-btn" onclick="buyNow('Mahindra Thar')">Buy Now</button>
+    <button class="see-more-btn" onclick="viewDetails('mahindra-thar')">See More Details</button>
  
   </div>
    <div class="product-card">
@@ -84,6 +122,7 @@
     <h3>Mahindra Scorpio</h3>
     <p class="price">₹15,00,000</p>
     <button class="buy-btn" onclick="buyNow('Mahindra Scorpio')">Buy Now</button>
+    <button class="see-more-btn" onclick="viewDetails('mahindra-scorpio')">See More Details</button>
  
   </div>
   <div class="product-card">
@@ -91,6 +130,7 @@
     <h3>Hundai verna</h3>
     <p class="price">₹25,00,000</p>
     <button class="buy-btn" onclick="buyNow('Hundai verna')">Buy Now</button>
+    <button class="see-more-btn" onclick="viewDetails('hyundai-verna')">See More Details</button>
  
   </div>
   <div class="product-card">
@@ -98,18 +138,21 @@
     <h3>Honda Creata</h3>
     <p class="price">₹18,00,000</p>
     <button class="buy-btn" onclick="buyNow('Honda Creata')">Buy Now</button>
+    <button class="see-more-btn" onclick="viewDetails('honda-creta')">See More Details</button>
   </div>
   <div class="product-card">
     <img src="https://imgd.aeplcdn.com/664x374/n/cw/ec/134287/city-exterior-right-front-three-quarter-2.png?isig=0&q=80" alt="Honda City" onclick="openFullImage(this.src)">
     <h3>Honda City</h3>
     <p class="price">₹10,00,000</p>
     <button class="buy-btn" onclick="buyNow('Honda City')">Buy Now</button>
+    <button class="see-more-btn" onclick="viewDetails('honda-city')">See More Details</button>
   </div>
   <div class="product-card">
     <img src="https://cdni.autocarindia.com/ExtraImages/20210204105942_2021_Tata_Safari_white_front.jpg" alt="Tata Safari" onclick="openFullImage(this.src)">
     <h3>Tata Safari</h3>
     <p class="price">₹18,00,000</p>
     <button class="buy-btn" onclick="buyNow('Tata Safari')">Buy Now</button>
+    <button class="see-more-btn" onclick="viewDetails('tata-safari')">See More Details</button>
   </div>
 </div>
 <div id="imageModal" class="modal">
@@ -338,7 +381,7 @@
 <!-- Features Section -->  
  <section class="features-section">
   <div class="features-container">
-    <h2>Why Choose True Cars</h2>
+    <h1>Why Choose True Cars</h1>
     <p class="features-subtitle">
       We deliver quality cars with trust, transparency, and comfort.
     </p>
@@ -374,7 +417,7 @@
 
 <section class="featured-cars">
   <div class="featured-container">
-    <h2>Featured Cars</h2>
+    <h1>Featured Cars</h1>
     <p class="featured-subtitle">Filter cars by price & fuel type</p>
 
     <!-- Filters -->
@@ -439,7 +482,7 @@
 
 <!-- ===================== TEST DRIVE SECTION ===================== -->
 <section class="test-drive-section" id="test-drive">
-  <h2>Book a Test Drive</h2>
+  <h1>Book a Test Drive</h1>
   <p>Pick your favorite car and schedule a test drive at your convenience!</p>
 
   <div class="test-drive-container">
@@ -488,7 +531,7 @@
 </section>
 <!-- Testimonials Section -->
 <section id="testimonials" >
-  <h2 class="section-title">What Our Customers Say</h2>
+  <h1 class="section-title">What Our Customers Say</h1>
   <p class="section-subtitle">Real reviews from our happy customers</p>
 
   <div class="testimonials">
@@ -568,7 +611,22 @@
     <p>© 2026 True Cars. All Rights Reserved. Created by Charan Dawange.</p>
   </div>
 </footer>
+<script>
+  
+let heroBg = document.querySelector('.hero');
 
+setInterval(() => {
+
+  heroBg.style.backgroundImage = "url('img/bg-light.jpg')";
+
+  setTimeout(() => {
+    heroBg.style.backgroundImage = "url('img/bg.jpg')";
+  }, 1000);
+
+}, 2200);
+
+
+</script>
 
 </body>
 <script src="syntax.js"></script>
