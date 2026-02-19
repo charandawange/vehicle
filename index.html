@@ -79,6 +79,8 @@
     <p class="price">₹75,00,000</p>
     <button class="buy-btn" onclick="buyNow('BMW X5')">Buy Now</button>
     <button class="see-more-btn" onclick="viewDetails('bmw-x5')">See More Details</button>
+    <button class="wishlist-btn" onclick="addToWishlist('BMW X5','7500000','BMW-X5.jpg')">❤️ Wishlist</button>
+
     
   </div>
 
@@ -88,6 +90,7 @@
     <p class="price">₹82,00,000</p>
     <button class="buy-btn" onclick="buyNow('Audi Q7')">Buy Now</button>
     <button class="see-more-btn" onclick="viewDetails('audi-q7')">See More Details</button>
+    <button class="wishlist-btn" onclick="addToWishlist('Audi Q7','8200000','Audi-Q7.jpg')">❤️ Wishlist</button>
 
     
   </div>
@@ -98,6 +101,7 @@
     <p class="price">₹68,00,000</p>
     <button class="buy-btn" onclick="buyNow('Mercedes GLC')">Buy Now</button>
     <button class="see-more-btn" onclick="viewDetails('mercedes-glc')">See More Details</button>
+    <button class="wishlist-btn" onclick="addToWishlist('Mercedes GLC','6800000','Mercedes-GLC.jpg')">❤️ Wishlist</button>
    
   </div>
 
@@ -107,6 +111,7 @@
     <p class="price">₹1,20,00,000</p>
     <button class="buy-btn" onclick="buyNow('Range Rover')">Buy Now</button>
     <button class="see-more-btn" onclick="viewDetails('range-rover')">See More Details</button>
+    <button class="wishlist-btn" onclick="addToWishlist('Range Rover','12000000','Range-Rover.jpg')">❤️ Wishlist</button>
  
   </div>
    <div class="product-card">
@@ -115,6 +120,7 @@
     <p class="price">₹20,00,000</p>
     <button class="buy-btn" onclick="buyNow('Mahindra Thar')">Buy Now</button>
     <button class="see-more-btn" onclick="viewDetails('mahindra-thar')">See More Details</button>
+    <button class="wishlist-btn" onclick="addToWishlist('Mahindra Thar','2000000','Mahindra-Thar.jpg')">❤️ Wishlist</button>
  
   </div>
    <div class="product-card">
@@ -123,6 +129,7 @@
     <p class="price">₹15,00,000</p>
     <button class="buy-btn" onclick="buyNow('Mahindra Scorpio')">Buy Now</button>
     <button class="see-more-btn" onclick="viewDetails('mahindra-scorpio')">See More Details</button>
+    <button class="wishlist-btn" onclick="addToWishlist('Mahindra Scorpio','1500000','Mahindra-Scorpio.jpg')">❤️ Wishlist</button>
  
   </div>
   <div class="product-card">
@@ -131,6 +138,7 @@
     <p class="price">₹25,00,000</p>
     <button class="buy-btn" onclick="buyNow('Hundai verna')">Buy Now</button>
     <button class="see-more-btn" onclick="viewDetails('hyundai-verna')">See More Details</button>
+    <button class="wishlist-btn" onclick="addToWishlist('Hundai verna','2500000','Hyundai-Verna.jpg')">❤️ Wishlist</button>
  
   </div>
   <div class="product-card">
@@ -139,6 +147,7 @@
     <p class="price">₹18,00,000</p>
     <button class="buy-btn" onclick="buyNow('Honda Creata')">Buy Now</button>
     <button class="see-more-btn" onclick="viewDetails('honda-creta')">See More Details</button>
+    <button class="wishlist-btn" onclick="addToWishlist('Honda Creata','1800000','Honda-Creta.jpg')">❤️ Wishlist</button>
   </div>
   <div class="product-card">
     <img src="https://imgd.aeplcdn.com/664x374/n/cw/ec/134287/city-exterior-right-front-three-quarter-2.png?isig=0&q=80" alt="Honda City" onclick="openFullImage(this.src)">
@@ -146,6 +155,7 @@
     <p class="price">₹10,00,000</p>
     <button class="buy-btn" onclick="buyNow('Honda City')">Buy Now</button>
     <button class="see-more-btn" onclick="viewDetails('honda-city')">See More Details</button>
+    <button class="wishlist-btn" onclick="addToWishlist('Honda City','1000000','Honda-City.jpg')">❤️ Wishlist</button>
   </div>
   <div class="product-card">
     <img src="https://cdni.autocarindia.com/ExtraImages/20210204105942_2021_Tata_Safari_white_front.jpg" alt="Tata Safari" onclick="openFullImage(this.src)">
@@ -153,6 +163,7 @@
     <p class="price">₹18,00,000</p>
     <button class="buy-btn" onclick="buyNow('Tata Safari')">Buy Now</button>
     <button class="see-more-btn" onclick="viewDetails('tata-safari')">See More Details</button>
+    <button class="wishlist-btn" onclick="addToWishlist('Tata Safari','1800000','Tata-Safari.jpg')">❤️ Wishlist</button>
   </div>
 </div>
 <div id="imageModal" class="modal">
@@ -617,10 +628,10 @@ let heroBg = document.querySelector('.hero');
 
 setInterval(() => {
 
-  heroBg.style.backgroundImage = "url('img/bg-light.jpg')";
+  heroBg.style.backgroundImage = "url('bg-light.jpg')";
 
   setTimeout(() => {
-    heroBg.style.backgroundImage = "url('img/bg.jpg')";
+    heroBg.style.backgroundImage = "url('bg.jpg')";
   }, 1000);
 
 }, 2200);

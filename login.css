@@ -1,0 +1,104 @@
+/* ===== RESET ===== */
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+/* ===== BODY ===== */
+body{
+  font-family:'Poppins',sans-serif;
+  background:#020617;
+  color:#fff;
+  min-height:100vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  padding:20px;
+}
+
+/* ===== LOGIN BACKGROUND ===== */
+body::before{
+  content:"";
+  position:fixed;
+  inset:0;
+  background:url('bg.jpg') center/cover no-repeat;
+  filter:brightness(.4);
+  z-index:-2;
+}
+
+/* Dark overlay like hero */
+body::after{
+  content:"";
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,.55);
+  z-index:-1;
+}
+
+/* ===== LOGIN BOX ===== */
+.login-box{
+  width:360px;
+  background:#0f172a;
+  padding:35px 28px;
+  border-radius:16px;
+  box-shadow:0 20px 60px rgba(0,0,0,.6);
+  text-align:center;
+  transition:.3s;
+  border:1px solid #1e293b;
+}
+
+.login-box:hover{
+  transform:translateY(-6px);
+}
+
+/* ===== TITLE ===== */
+.login-box h2{
+  margin-bottom:20px;
+  color:#ef4444;
+  font-size:28px;
+}
+
+/* ===== INPUT ===== */
+.login-box input{
+  width:100%;
+  padding:12px;
+  margin:10px 0;
+  border-radius:10px;
+  border:1px solid #1e293b;
+  background:#020617;
+  color:#fff;
+  outline:none;
+  font-size:15px;
+  transition:.25s;
+}
+
+.login-box input:focus{
+  border:1px solid #ef4444;
+}
+
+/* ===== BUTTON ===== */
+.login-box button{
+  width:100%;
+  padding:13px;
+  margin-top:15px;
+  background:#ef4444;
+  color:#fff;
+  border:none;
+  border-radius:12px;
+  font-size:16px;
+  cursor:pointer;
+  transition:.3s;
+}
+
+.login-box button:hover{
+  background:#dc2626;
+}
+
+/* ===== MOBILE ===== */
+@media(max-width:420px){
+  .login-box{
+    width:100%;
+    padding:25px;
+  }
+}

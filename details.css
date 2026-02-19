@@ -1,203 +1,200 @@
-/* ================= Car Details & EMI Page ================= */
-
-/* 1. Global Box Sizing */
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
+/* ===== RESET ===== */
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
 }
 
-/* 2. Body & Fonts */
-body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background: #f5f5f5;
-  color: #333;
-  line-height: 1.6;
+body{
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background:#f5f5f5;
+  color:#333;
+  line-height:1.6;
+  padding:20px;
+}
+
+/* ===== MAIN CONTAINER ===== */
+.details-container{
+  max-width:900px;
+  margin:auto;
+  background:#fff;
+  padding:35px;
+  border-radius:20px;
+  box-shadow:0 15px 40px rgba(0,0,0,0.1);
+  animation:fadeIn .6s ease;
+}
+
+/* ===== IMAGE ===== */
+.car-image{
+  text-align:center;
+  margin-bottom:20px;
+}
+
+.car-image img{
+  width:100%;
+  max-height:420px;
+  object-fit:cover;
+  border-radius:15px;
+  box-shadow:0 15px 35px rgba(0,0,0,0.2);
+}
+
+/* ===== TEXT ===== */
+.details-container h1{
+  font-size:32px;
+  margin-bottom:8px;
+}
+
+.details-container h2{
+  color:#0072ff;
+  margin-bottom:20px;
+}
+
+.details-container h3{
+  margin-top:25px;
+  margin-bottom:10px;
+  color:#444;
+}
+
+.details-container p{
+  margin:6px 0;
+}
+
+.details-container ul{
+  list-style:none;
+}
+
+.details-container li{
+  padding:8px 0;
+  border-bottom:1px solid #eee;
+}
+
+/* ===== EMI BOX ===== */
+.emi-box{
+  margin-top:15px;
+  background:#f1f7ff;
+  padding:20px;
+  border-radius:15px;
+  text-align:center;
+}
+
+.emi-box input{
+  width:180px;
+  padding:12px;
+  margin:8px;
+  border-radius:8px;
+  border:1px solid #ccc;
+}
+
+.emi-btn{
+  padding:12px 25px;
+  border:none;
+  background:linear-gradient(45deg,#00c6ff,#0072ff);
+  color:#fff;
+  border-radius:25px;
+  cursor:pointer;
+  margin-top:10px;
+  font-weight:bold;
+}
+
+#emiResult{
+  margin-top:15px;
+  color:#0072ff;
+  font-weight:bold;
+}
+
+/* ===== BACK BUTTON ===== */
+.back-btn{
+  margin-top:25px;
+  padding:12px 25px;
+  background:#000;
+  color:#fff;
+  border:none;
+  border-radius:10px;
+  cursor:pointer;
+}
+
+/* ===== ANIMATION ===== */
+@keyframes fadeIn{
+  from{opacity:0; transform:translateY(20px)}
+  to{opacity:1; transform:translateY(0)}
 }
 
 
-/* 3. Car Image */
-.car-image {
-  text-align: center;
-  margin-bottom: 20px;
-}
+/* ================================================= */
+/* ================= TABLET ======================== */
+/* ================================================= */
 
-.car-image img {
-  width: 80%;
-  max-width: 700px;
-  border-radius: 15px;
-  box-shadow: 0 15px 35px rgba(0,0,0,0.2);
-  transition: transform 0.4s ease, box-shadow 0.4s ease;
-}
+@media(max-width:768px){
 
-.car-image img:hover {
-  transform: scale(1.05);
-  box-shadow: 0 20px 50px rgba(0,0,0,0.35);
-}
-
-/* 4. Details Container */
-.details-container {
-  padding: 40px 20px;
-  text-align: center;
-  max-width: 900px;
-  margin: auto;
-  background: #fff;
-  border-radius: 20px;
-  box-shadow: 0 15px 40px rgba(0,0,0,0.1);
-  animation: fadeIn 0.8s ease-in-out;
-}
-
-.details-container h1 {
-  font-size: 32px;
-  margin-bottom: 10px;
-  color: #222;
-}
-
-.details-container h2 {
-  font-size: 24px;
-  color: #0072ff;
-  margin-bottom: 25px;
-}
-
-.details-container h3 {
-  font-size: 20px;
-  margin: 20px 0 10px;
-  color: #444;
-}
-
-.details-container ul {
-  list-style: none;
-  padding: 0;
-}
-
-.details-container li {
-  padding: 6px 0;
-  font-size: 16px;
-  border-bottom: 1px solid #eee;
-  transition: background 0.3s;
-}
-
-.details-container li:hover {
-  background: rgba(0,114,255,0.05);
-  border-radius: 5px;
-}
-
-/* 5. Back Button */
-.back-btn {
-  margin-top: 25px;
-  padding: 12px 25px;
-  background: #000;
-  color: #fff;
-  border: none;
-  cursor: pointer;
-  border-radius: 10px;
-  transition: 0.3s;
-}
-
-.back-btn:hover {
-  background: #0072ff;
-  transform: scale(1.05);
-  box-shadow: 0 10px 20px rgba(0,114,255,0.4);
-}
-
-/* 6. EMI Box */
-.emi-box {
-  background: rgba(0,114,255,0.05);
-  padding: 25px;
-  border-radius: 20px;
-  margin: 30px 0;
-  text-align: center;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.05);
-  transition: transform 0.4s;
-}
-
-.emi-box:hover {
-  transform: translateY(-5px);
-}
-
-.emi-box input {
-  width: 200px;
-  max-width: 90%;
-  padding: 12px;
-  margin: 10px;
-  border-radius: 8px;
-  border: 1px solid #ccc;
-  outline: none;
-  font-size: 14px;
-}
-
-.emi-btn {
-  padding: 12px 25px;
-  background: linear-gradient(45deg, #00c6ff, #0072ff);
-  border: none;
-  color: white;
-  border-radius: 25px;
-  cursor: pointer;
-  transition: 0.3s;
-  font-weight: bold;
-}
-
-.emi-btn:hover {
-  transform: scale(1.1);
-  box-shadow: 0 10px 25px rgba(0,100,255,0.4);
-}
-
-#emiResult {
-  margin-top: 20px;
-  font-size: 16px;
-  color: #0072ff;
-  font-weight: bold;
-}
-
-/* 7. Animations */
-@keyframes fadeIn {
-  0% {opacity:0; transform: translateY(20px);}
-  100% {opacity:1; transform: translateY(0);}
-}
-
-/* 8. Responsive */
-@media (max-width: 768px) {
-  .details-container {
-    padding: 20px;
+  body{
+    padding:12px;
   }
 
-  .details-container h1 {
-    font-size: 24px;
+  .details-container{
+    padding:22px;
+    border-radius:15px;
   }
 
-  .details-container h2 {
-    font-size: 18px;
+  .details-container h1{
+    font-size:24px;
   }
 
-  .car-image img {
-    max-height: 250px;
+  .details-container h2{
+    font-size:18px;
   }
 
-  .emi-box input {
-    width: 90%;
+  .car-image img{
+    max-height:260px;
   }
 
-  .back-btn, .emi-btn {
-    width: 90%;
-    max-width: 250px;
+  /* ⭐ EMI stack */
+  .emi-box input{
+    width:100%;
+    margin:6px 0;
+  }
+
+  .emi-btn{
+    width:100%;
+  }
+
+  .back-btn{
+    width:100%;
   }
 }
 
-@media (max-width: 480px) {
-  .details-container h1 {
-    font-size: 20px;
+
+/* ================================================= */
+/* ================= MOBILE ======================== */
+/* ================================================= */
+
+@media(max-width:480px){
+
+  .details-container{
+    padding:16px;
   }
 
-  .details-container h2 {
-    font-size: 16px;
+  .details-container h1{
+    font-size:20px;
   }
 
-  .emi-box input {
-    font-size: 14px;
-    padding: 10px;
+  .details-container h2{
+    font-size:16px;
   }
 
-  .emi-btn {
-    padding: 10px 20px;
+  .details-container h3{
+    font-size:15px;
+  }
+
+  .details-container p,
+  .details-container li{
+    font-size:14px;
+  }
+
+  .car-image img{
+    max-height:220px;
+  }
+
+  #emiResult{
+    font-size:14px;
   }
 }
