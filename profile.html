@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>User Profile</title>
+
+<style>
+body{
+  font-family:Poppins,sans-serif;
+  background:#0f172a;
+  color:#fff;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  height:100vh;
+}
+
+.profile-card{
+  background:#111827;
+  padding:30px;
+  border-radius:14px;
+  width:320px;
+  text-align:center;
+  box-shadow:0 10px 30px rgba(0,0,0,.4);
+}
+
+.profile-card img{
+  width:90px;
+  height:90px;
+  border-radius:50%;
+  border:3px solid #ef4444;
+  object-fit:cover;
+  margin-bottom:15px;
+}
+
+.profile-card h2{
+  margin-bottom:10px;
+}
+
+.info{
+  color:#94a3b8;
+  margin:6px 0;
+}
+
+.btn{
+  margin-top:15px;
+  padding:10px 16px;
+  border:none;
+  border-radius:8px;
+  cursor:pointer;
+  width:100%;
+}
+
+.logout{
+  background:#ef4444;
+  color:#fff;
+}
+
+.home{
+  background:#1e293b;
+  color:#fff;
+}
+</style>
+</head>
+
+<body>
+
+<div class="profile-card">
+
+<img src="https://i.imgur.com/6VBx3io.png">
+
+<h2 id="username">User</h2>
+
+<p class="info" id="wishlistCount"></p>
+
+<button class="btn home" onclick="goHome()">Home</button>
+<button class="btn logout" onclick="logout()">Logout</button>
+
+</div>
+
+<script>
+const username = localStorage.getItem("username") || "Guest";
+document.getElementById("username").innerText = username;
+
+// wishlist count
+let wishlist = JSON.parse(localStorage.getItem("wishlist")) || [];
+document.getElementById("wishlistCount").innerText =
+  "Wishlist items: " + wishlist.length;
+
+function logout(){
+  localStorage.removeItem("isLoggedIn");
+  localStorage.removeItem("username");
+  alert("Logged out");
+  window.location.href="login.html";
+}
+
+function goHome(){
+  window.location.href="index.html";
+}
+</script>
+
+</body>
+</html>

@@ -67,7 +67,88 @@
   <button class="prev">❮</button>
   <button class="next">❯</button>
 </div>
+<!-- Featured Cars Section -->
 
+<section class="featured-cars">
+  <div class="featured-container">
+    <h1>Featured Cars</h1>
+    <p class="featured-subtitle">Filter cars by price & fuel type</p>
+
+    <!-- Filters -->
+    <div class="filters">
+      <select id="priceFilter">
+        <option value="all">All Prices</option>
+        <option value="0-500000">Below ₹5 Lakh</option>
+        <option value="500000-1000000">₹5–10 Lakh</option>
+        <option value="1000000">Above ₹10 Lakh</option>
+      </select>
+
+      <select id="fuelFilter">
+        <option value="all">All Fuel</option>
+        <option value="petrol">Petrol</option>
+        <option value="diesel">Diesel</option>
+        <option value="electric">Electric</option>
+      </select>
+    </div>
+
+    <!-- Cars -->
+    <div class="cars-grid" id="carsGrid">
+
+      <div class="car-card" data-price="850000" data-fuel="petrol">
+        <img src="https://wallpapers.com/images/hd/dynamic-and-stylish-toyota-corolla-cruising-on-the-highway-5xlcnkipjvwzlnt4.jpg">
+        <div class="car-info">
+          <h3>Toyota Corolla</h3>
+          <p>Petrol • Automatic</p>
+          <span class="price">₹8,50,000</span>
+        </div>
+      </div>
+
+      <div class="car-card" data-price="1320000" data-fuel="diesel">
+        <img src="https://autonexa.com/storage/uploads/2023/02/hyundai-creta-right-front-three-quarter0_1675329267.webp">
+        <div class="car-info">
+          <h3>Hyundai Creta</h3>
+          <p>Diesel • Automatic</p>
+          <span class="price">₹13,20,000</span>
+        </div>
+      </div>
+
+      <div class="car-card" data-price="420000" data-fuel="petrol">
+        <img src="https://carindia.in/wp-content/uploads/2019/04/2019-Maruti-Suzuki-Alto-launch-price-and-specs_1.jpg">
+        <div class="car-info">
+          <h3>Maruti Alto</h3>
+          <p>Petrol • Manual</p>
+          <span class="price">₹4,20,000</span>
+        </div>
+      </div>
+
+      <div class="car-card" data-price="1500000" data-fuel="electric">
+        <img src="https://www.bncap.in/wp-content/uploads/2024/06/1314_kanger-nexon-ev-3_0_EMPOWERED_3C-LR_FRONT-3-4th_F1_RGB-2-1.png">
+        <div class="car-info">
+          <h3>Tata Nexon EV</h3>
+          <p>Electric • Automatic</p>
+          <span class="price">₹15,00,000</span>
+        </div>
+      </div>
+      <div class="car-card" data-price="900000" data-fuel="diesel">
+        <img src="https://imgd-ct.aeplcdn.com/664x415/n/cw/ec/54399/swift-exterior-left-front-three-quarter.jpeg?q=80">
+        <div class="car-info">
+          <h3>Maruti Swift</h3>
+          <p>Diesel • Manual</p>
+          <span class="price">₹9,00,000</span>
+        </div>
+      </div>
+        <div class="car-card" data-price="1100000" data-fuel="petrol">
+        <img src="https://s2-autoesporte.glbimg.com/x9-96WDyaEgdKWJ6rRkt4lZl6aY=/0x0:1800x1150/984x0/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_cf9d035bf26b4646b105bd958f32089d/internal_photos/bs/2024/V/T/HDDF8xS4qHst5XvGou8w/honda-city-hatch-2025-dianteira-estatica.jpg">
+        <div class="car-info">
+          <h3>Honda City</h3>
+          <p>Petrol • Automatic</p>
+          <span class="price">₹11,00,000</span>
+          </div>
+        </div>
+
+    </div>
+  </div>
+</section>
 
 
 
@@ -79,7 +160,7 @@
     <p class="price">₹75,00,000</p>
     <button class="buy-btn" onclick="buyNow('BMW X5')">Buy Now</button>
     <button class="see-more-btn" onclick="viewDetails('bmw-x5')">See More Details</button>
-    <button class="wishlist-btn" onclick="addToWishlist('BMW X5','7500000','BMW-X5.jpg')">❤️ Wishlist</button>
+    <button class="wishlist-btn" onclick="addToWishlist('BMW X5','7500000','https://www.sueddeutsche.de/2022/06/08/e4b394b2-de28-45e5-9705-406b2496f312.jpeg?q=60&fm=jpeg&width=1000&rect=70%2C146%2C1252%2C704',this)">♡ Wishlist</button>
 
     
   </div>
@@ -90,7 +171,7 @@
     <p class="price">₹82,00,000</p>
     <button class="buy-btn" onclick="buyNow('Audi Q7')">Buy Now</button>
     <button class="see-more-btn" onclick="viewDetails('audi-q7')">See More Details</button>
-    <button class="wishlist-btn" onclick="addToWishlist('Audi Q7','8200000','Audi-Q7.jpg')">❤️ Wishlist</button>
+    <button class="wishlist-btn" onclick="addToWishlist('Audi Q7','8200000','https://www.ultimatecarpage.com/images/car/6006/BMW-X5-M-50377.jpg',this)">♡ Wishlist</button>
 
     
   </div>
@@ -101,7 +182,7 @@
     <p class="price">₹68,00,000</p>
     <button class="buy-btn" onclick="buyNow('Mercedes GLC')">Buy Now</button>
     <button class="see-more-btn" onclick="viewDetails('mercedes-glc')">See More Details</button>
-    <button class="wishlist-btn" onclick="addToWishlist('Mercedes GLC','6800000','Mercedes-GLC.jpg')">❤️ Wishlist</button>
+    <button class="wishlist-btn" onclick="addToWishlist('Mercedes GLC','6800000','https://www.motortrend.com/uploads/2023/05/014-2023-mercedes-benz-glc-30-1.jpg',this)">♡ Wishlist</button>
    
   </div>
 
@@ -111,7 +192,7 @@
     <p class="price">₹1,20,00,000</p>
     <button class="buy-btn" onclick="buyNow('Range Rover')">Buy Now</button>
     <button class="see-more-btn" onclick="viewDetails('range-rover')">See More Details</button>
-    <button class="wishlist-btn" onclick="addToWishlist('Range Rover','12000000','Range-Rover.jpg')">❤️ Wishlist</button>
+    <button class="wishlist-btn" onclick="addToWishlist('Range Rover','12000000','https://www.motortrend.com/files/67abe44bb59a9e0008e34fa0/1-2025-land-rover-range-rover-front-view.jpg',this)">♡ Wishlist</button>
  
   </div>
    <div class="product-card">
@@ -120,7 +201,7 @@
     <p class="price">₹20,00,000</p>
     <button class="buy-btn" onclick="buyNow('Mahindra Thar')">Buy Now</button>
     <button class="see-more-btn" onclick="viewDetails('mahindra-thar')">See More Details</button>
-    <button class="wishlist-btn" onclick="addToWishlist('Mahindra Thar','2000000','Mahindra-Thar.jpg')">❤️ Wishlist</button>
+    <button class="wishlist-btn" onclick="addToWishlist('Mahindra Thar','2000000','https://www.dadamotors.com/all/superadmin/carimage2/mahindra-thar-2.webp',this)">♡ Wishlist</button>
  
   </div>
    <div class="product-card">
@@ -129,7 +210,7 @@
     <p class="price">₹15,00,000</p>
     <button class="buy-btn" onclick="buyNow('Mahindra Scorpio')">Buy Now</button>
     <button class="see-more-btn" onclick="viewDetails('mahindra-scorpio')">See More Details</button>
-    <button class="wishlist-btn" onclick="addToWishlist('Mahindra Scorpio','1500000','Mahindra-Scorpio.jpg')">❤️ Wishlist</button>
+    <button class="wishlist-btn" onclick="addToWishlist('Mahindra Scorpio','1500000','https://media.zigcdn.com/media/model/2025/Dec/mahindra-scorpio1_600x400.jpg',this)">♡ Wishlist</button>
  
   </div>
   <div class="product-card">
@@ -138,7 +219,7 @@
     <p class="price">₹25,00,000</p>
     <button class="buy-btn" onclick="buyNow('Hundai verna')">Buy Now</button>
     <button class="see-more-btn" onclick="viewDetails('hyundai-verna')">See More Details</button>
-    <button class="wishlist-btn" onclick="addToWishlist('Hundai verna','2500000','Hyundai-Verna.jpg')">❤️ Wishlist</button>
+    <button class="wishlist-btn" onclick="addToWishlist('Hundai verna','2500000','https://stimg.cardekho.com/images/carexteriorimages/630x420/Hyundai/Verna/7729/1616055133475/front-left-side-47.jpg?imwidth=420&impolicy=resize',this)">♡ Wishlist</button>
  
   </div>
   <div class="product-card">
@@ -147,7 +228,7 @@
     <p class="price">₹18,00,000</p>
     <button class="buy-btn" onclick="buyNow('Honda Creata')">Buy Now</button>
     <button class="see-more-btn" onclick="viewDetails('honda-creta')">See More Details</button>
-    <button class="wishlist-btn" onclick="addToWishlist('Honda Creata','1800000','Honda-Creta.jpg')">❤️ Wishlist</button>
+    <button class="wishlist-btn" onclick="addToWishlist('Honda Creata','1800000','https://media.zigcdn.com/media/content/2017/Apr/2017-hyundai-creta-1.jpg?tr=w-420',this)">♡ Wishlist</button>
   </div>
   <div class="product-card">
     <img src="https://imgd.aeplcdn.com/664x374/n/cw/ec/134287/city-exterior-right-front-three-quarter-2.png?isig=0&q=80" alt="Honda City" onclick="openFullImage(this.src)">
@@ -155,7 +236,7 @@
     <p class="price">₹10,00,000</p>
     <button class="buy-btn" onclick="buyNow('Honda City')">Buy Now</button>
     <button class="see-more-btn" onclick="viewDetails('honda-city')">See More Details</button>
-    <button class="wishlist-btn" onclick="addToWishlist('Honda City','1000000','Honda-City.jpg')">❤️ Wishlist</button>
+    <button class="wishlist-btn" onclick="addToWishlist('Honda City','1000000','https://imgd.aeplcdn.com/664x374/n/cw/ec/134287/city-exterior-right-front-three-quarter-2.png?isig=0&q=80',this)">♡ Wishlist</button>
   </div>
   <div class="product-card">
     <img src="https://cdni.autocarindia.com/ExtraImages/20210204105942_2021_Tata_Safari_white_front.jpg" alt="Tata Safari" onclick="openFullImage(this.src)">
@@ -163,7 +244,7 @@
     <p class="price">₹18,00,000</p>
     <button class="buy-btn" onclick="buyNow('Tata Safari')">Buy Now</button>
     <button class="see-more-btn" onclick="viewDetails('tata-safari')">See More Details</button>
-    <button class="wishlist-btn" onclick="addToWishlist('Tata Safari','1800000','Tata-Safari.jpg')">❤️ Wishlist</button>
+    <button class="wishlist-btn" onclick="addToWishlist('Tata Safari','1800000','https://cdni.autocarindia.com/ExtraImages/20210204105942_2021_Tata_Safari_white_front.jpg',this)">♡ Wishlist</button>
   </div>
 </div>
 <div id="imageModal" class="modal">
@@ -424,72 +505,7 @@
     </div>
   </div>
 </section>
-<!-- Featured Cars Section -->
 
-<section class="featured-cars">
-  <div class="featured-container">
-    <h1>Featured Cars</h1>
-    <p class="featured-subtitle">Filter cars by price & fuel type</p>
-
-    <!-- Filters -->
-    <div class="filters">
-      <select id="priceFilter">
-        <option value="all">All Prices</option>
-        <option value="0-500000">Below ₹5 Lakh</option>
-        <option value="500000-1000000">₹5–10 Lakh</option>
-        <option value="1000000">Above ₹10 Lakh</option>
-      </select>
-
-      <select id="fuelFilter">
-        <option value="all">All Fuel</option>
-        <option value="petrol">Petrol</option>
-        <option value="diesel">Diesel</option>
-        <option value="electric">Electric</option>
-      </select>
-    </div>
-
-    <!-- Cars -->
-    <div class="cars-grid" id="carsGrid">
-
-      <div class="car-card" data-price="850000" data-fuel="petrol">
-        <img src="https://wallpapers.com/images/hd/dynamic-and-stylish-toyota-corolla-cruising-on-the-highway-5xlcnkipjvwzlnt4.jpg">
-        <div class="car-info">
-          <h3>Toyota Corolla</h3>
-          <p>Petrol • Automatic</p>
-          <span class="price">₹8,50,000</span>
-        </div>
-      </div>
-
-      <div class="car-card" data-price="1320000" data-fuel="diesel">
-        <img src="https://autonexa.com/storage/uploads/2023/02/hyundai-creta-right-front-three-quarter0_1675329267.webp">
-        <div class="car-info">
-          <h3>Hyundai Creta</h3>
-          <p>Diesel • Automatic</p>
-          <span class="price">₹13,20,000</span>
-        </div>
-      </div>
-
-      <div class="car-card" data-price="420000" data-fuel="petrol">
-        <img src="https://carindia.in/wp-content/uploads/2019/04/2019-Maruti-Suzuki-Alto-launch-price-and-specs_1.jpg">
-        <div class="car-info">
-          <h3>Maruti Alto</h3>
-          <p>Petrol • Manual</p>
-          <span class="price">₹4,20,000</span>
-        </div>
-      </div>
-
-      <div class="car-card" data-price="1500000" data-fuel="electric">
-        <img src="https://www.bncap.in/wp-content/uploads/2024/06/1314_kanger-nexon-ev-3_0_EMPOWERED_3C-LR_FRONT-3-4th_F1_RGB-2-1.png">
-        <div class="car-info">
-          <h3>Tata Nexon EV</h3>
-          <p>Electric • Automatic</p>
-          <span class="price">₹15,00,000</span>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</section>
 
 <!-- ===================== TEST DRIVE SECTION ===================== -->
 <section class="test-drive-section" id="test-drive">
@@ -622,6 +638,8 @@
     <p>© 2026 True Cars. All Rights Reserved. Created by Charan Dawange.</p>
   </div>
 </footer>
+<!-- Back To Top Button -->
+<button id="topBtn" onclick="topFunction()">⬆</button>
 <script>
   
 let heroBg = document.querySelector('.hero');

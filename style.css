@@ -112,49 +112,114 @@ body{
 
 /* ===== USER SECTION ===== */
 #user-section{
-  display: flex;
-  align-items: center;
+  margin-left:15px;
+  position:relative;
+  display:flex;
+  align-items:center;
 }
 
-.profile-box{
-  display: flex;
-  align-items: center;
-  gap: 12px;
+/* ===== USER DROPDOWN ===== */
+.user-dropdown{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  cursor:pointer;
+  position:relative;
+  background:#0f172a;
+  padding:6px 14px;
+  border-radius:30px;
+  border:1px solid #1e293b;
+  transition:.3s;
 }
 
-/* Profile Image */
-#profile-pic{
-  width:40px;
-  height:40px;
+.user-dropdown:hover{
+  background:#1e293b;
+}
+
+/* ===== PROFILE PIC ===== */
+.user-dropdown img{
+  width:34px;
+  height:34px;
   border-radius:50%;
   object-fit:cover;
   border:2px solid #ef4444;
-  cursor:pointer;
-  transition:0.3s;
 }
 
-.profile-box img:hover{
-  transform: scale(1.05);
+/* ===== USERNAME ===== */
+.user-dropdown span{
+  font-size:14px;
+  font-weight:500;
+  color:#e2e8f0;
+  white-space:nowrap;
 }
+
+/* ===== DROPDOWN MENU ===== */
 .dropdown-content{
+  position:absolute;
+  top:115%;
+  right:0;
+  background:#020617;
+  border-radius:12px;
+  min-width:170px;
+  padding:8px 0;
+  box-shadow:0 12px 30px rgba(0,0,0,0.6);
+  display:none;
+  flex-direction:column;
+  border:1px solid #1e293b;
+  overflow:hidden;
+  animation:fadeDown .25s ease;
+  z-index:9999;
+}
+
+/* ===== LINKS ===== */
+.dropdown-content a{
+  padding:11px 16px;
+  color:#e2e8f0;
+  text-decoration:none;
+  font-size:14px;
+  transition:.25s;
+}
+
+.dropdown-content a:hover{
+  background:#ef4444;
   color:#fff;
-  
 }
 
-/* Logout Button */
-.profile-box a{
-  background: #ef4444;
-  color: #fff;
-  padding: 6px 14px;
-  border-radius: 8px;
-  font-size: 13px;
-  text-decoration: none;
-  transition: 0.3s;
+/* ===== SHOW ===== */
+.user-dropdown:hover .dropdown-content{
+  display:flex;
 }
 
-.profile-box a:hover{
-  background: #dc2626;
+/* ===== LOGIN BUTTON ===== */
+#user-section > a{
+  background:#ef4444;
+  padding:8px 16px;
+  border-radius:25px;
+  text-decoration:none;
+  color:#fff;
+  font-size:14px;
+  border:1px solid #dc2626;
+  transition:.3s;
 }
+
+#user-section > a:hover{
+  background:#dc2626;
+}
+.user-dropdown.open .dropdown-content{
+  display:flex;
+}
+/* ===== ANIMATION ===== */
+@keyframes fadeDown{
+  from{
+    opacity:0;
+    transform:translateY(-10px);
+  }
+  to{
+    opacity:1;
+    transform:translateY(0);
+  }
+}
+
 
 /* ===== MOBILE MENU BUTTON ===== */
 .menu-toggle{
@@ -190,7 +255,7 @@ body{
   }
 
   #user-section{
-    display: none;
+    display: flex;
   }
 }
 /* ======================== Hero Section ======================== */
@@ -382,7 +447,6 @@ body{
 }
 
 .buy-btn{background:red;color:white;}
-.wishlist-btn{background:#333;color:white;}
 
 /* ===== GALLERY ===== */
 .gallery{
@@ -1116,4 +1180,90 @@ section {
   border-radius:14px;
   width:90%;
   max-width:450px;
+}
+/* ===== BACK TO TOP BUTTON ===== */
+#topBtn{
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  z-index: 999;
+  border: none;
+  outline: none;
+  background: #ff3c00;
+  color: #fff;
+  cursor: pointer;
+  padding: 14px 18px;
+  border-radius: 50%;
+  font-size: 20px;
+  display: none;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.3);
+  transition: 0.3s;
+}
+
+#topBtn:hover{
+  background:#ff5722;
+  transform: scale(1.1);
+}
+/* ===== WISHLIST BUTTON PREMIUM ===== */
+.wishlist-btn{
+  background:#020617;
+  color:#fff;
+  padding:8px 12px;
+  border:none;
+  border-radius:8px;
+  cursor:pointer;
+  font-size:14px;
+  font-weight:600;
+  transition:0.3s ease;
+  box-shadow:0 4px 10px rgba(0,0,0,0.35);
+}
+
+/* Hover */
+.wishlist-btn:hover{
+  background:#ef4444;
+  transform:translateY(-2px);
+}
+
+/* Active (added state) */
+.wishlist-btn.active{
+  background:#ef4444;
+  color:#fff;
+  animation:heartPop .35s ease;
+}
+
+/* Heart animation */
+@keyframes heartPop{
+  0%{transform:scale(1);}
+  50%{transform:scale(1.25);}
+  100%{transform:scale(1);}
+}
+.action-row{
+  display:flex;
+  justify-content:center;
+  gap:10px;
+  margin-top:10px;
+  flex-wrap:wrap;
+}
+/* ===== MOBILE USER PROFILE FIX ===== */
+@media (max-width:900px){
+
+  #user-section{
+    display:flex;
+    align-items:center;
+  }
+
+  .user-dropdown span{
+    display:none;   /* mobile me name hide */
+  }
+
+  .user-dropdown{
+    padding:4px 6px;
+    border:none;
+    background:transparent;
+  }
+
+  .user-dropdown img{
+    width:36px;
+    height:36px;
+  }
 }

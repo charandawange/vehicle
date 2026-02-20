@@ -1,4 +1,12 @@
 document.addEventListener("DOMContentLoaded", function () {
+  const wishlist = JSON.parse(localStorage.getItem("wishlist")) || [];
+
+document.querySelectorAll(".wishlist-btn").forEach(btn=>{
+  const name = btn.dataset.name;
+  if(wishlist.find(i=>i.name===name)){
+    btn.classList.add("active");
+  }
+});
 
 /* ================= MENU TOGGLE ================= */
 window.toggleMenu = function () {
@@ -38,7 +46,9 @@ if (nextBtn && prevBtn && slides.length > 0) {
   prevBtn.onclick = showPrevSlide;
   setInterval(showNextSlide, 5000);
 }
-
+if(slides.length > 0){
+  slides[0].classList.add("active");
+}
 /* ================= IMAGE MODAL ================= */
 window.openFullImage = function (imgSrc) {
   const modal = document.getElementById("imageModal");
@@ -140,7 +150,7 @@ window.updateNavbarUser = function () {
         <img id="profile-pic" src="https://i.imgur.com/6VBx3io.png">
         <span>${username}</span>
         <div class="dropdown-content">
-          <a href="#">Profile</a>
+          <a href="profile.html">Profile</a>
           <a href="#" onclick="logoutUser()">Logout</a>
         </div>
       </div>`;
@@ -148,11 +158,20 @@ window.updateNavbarUser = function () {
     userSection.innerHTML = `<a href="login.html">Login</a>`;
   }
 };
-
+setTimeout(()=>{
+  const drop = document.querySelector(".user-dropdown");
+  if(drop){
+    drop.addEventListener("click",()=>{
+      drop.classList.toggle("open");
+    });
+  }
+},100);
 updateNavbarUser();
 
+
+
 /* ================= WISHLIST ================= */
-window.addToWishlist = function (name, image, price, btn) {
+window.addToWishlist = function (name, price, image, btn) {
   let wishlist = JSON.parse(localStorage.getItem("wishlist")) || [];
 
   if (wishlist.find((i) => i.name === name)) {
@@ -160,7 +179,7 @@ window.addToWishlist = function (name, image, price, btn) {
     return;
   }
 
-  wishlist.push({ name, image, price });
+  wishlist.push({ name, price, image });
   localStorage.setItem("wishlist", JSON.stringify(wishlist));
 
   if (btn) btn.classList.add("active");
@@ -208,3 +227,22 @@ window.viewDetails = function (car) {
 };
 
 });
+// ===== BACK TO TOP BUTTON =====
+let topBtn = document.getElementById("topBtn");
+
+window.onscroll = function(){
+  if(!topBtn) return;
+
+  if(document.body.scrollTop > 200 || document.documentElement.scrollTop > 200){
+    topBtn.style.display = "block";
+  }else{
+    topBtn.style.display = "none";
+  }
+};
+
+function topFunction(){
+  window.scrollTo({
+    top:0,
+    behavior:"smooth"
+  });
+}
