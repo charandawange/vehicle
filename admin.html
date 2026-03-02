@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Admin Panel</title>
+<link rel="stylesheet" href="admin.css">
+</head>
+<body>
+
+<!-- ✅ Admin protection -->
+<script>
+if(localStorage.getItem("isAdmin")!=="true"){
+  alert("Access denied ❌");
+  window.location.href="index.html";
+}
+</script>
+
+<h2>🚗 Admin Panel — Cars</h2>
+
+<!-- ✅ Logout -->
+<button onclick="logout()" style="margin-bottom:20px;">Logout</button>
+
+<!-- ✅ Form -->
+<div class="form">
+  <input id="name" placeholder="Car name">
+  <input id="price" placeholder="Price (1100000)">
+  <input id="fuel" placeholder="Fuel (Petrol/Diesel)">
+  <input id="img" placeholder="Image url">
+  <button onclick="addCar()">Add Car</button>
+</div>
+
+<!-- ✅ Cars list -->
+<div id="car-list"></div>
+
+<script src="admin.js"></script>
+
+<!-- ✅ Logout script -->
+<script>
+function logout(){
+  localStorage.removeItem("isAdmin");
+  window.location.href="index.html";
+}
+</script>
+
+</body>
+</html>

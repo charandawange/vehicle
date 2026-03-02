@@ -8,40 +8,18 @@
 
 <div class="login-box">
   <h2>True Cars Login</h2>
-  <input type="text" id="username" placeholder="Username">
-  <input type="password" id="password" placeholder="Password">
-  <button onclick="loginUser()">Login</button>
+
+  <!-- ⭐ BACKEND LOGIN FORM -->
+  <form onsubmit="event.preventDefault(); loginUser();">
+  <input id="username" placeholder="Username" required>
+  <input id="password" type="password" placeholder="Password" required>
+  <button type="submit">Login</button>
+</form>
 
   <p style="margin-top:15px;font-size:14px">
     New user? <a href="register.html" style="color:red">Register</a>
   </p>
 </div>
-
-<script>
-function loginUser(){
-  const u=document.getElementById("username").value.trim();
-  const p=document.getElementById("password").value.trim();
-
-  const savedU=localStorage.getItem("regUser");
-  const savedP=localStorage.getItem("regPass");
-
-  if(!savedU){
-    alert("First register ❗");
-    return;
-  }
-
-  if(u===savedU && p===savedP){
-    localStorage.setItem("isLoggedIn","true");
-    localStorage.setItem("username",u);
-
-    alert("Login success ✔");
-    window.location.href="index.html";
-  }
-  else{
-    alert("Wrong credentials ❌");
-  }
-}
-</script>
-
+<script src="login.js"></script>
 </body>
 </html>

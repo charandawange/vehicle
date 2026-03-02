@@ -67,7 +67,8 @@ body{
 
 <div class="profile-card">
 
-<img src="https://i.imgur.com/6VBx3io.png">
+<img id="profileImg" src="https://i.imgur.com/6VBx3io.png">
+<input type="file" id="profileInput" accept="image/*" style="margin-top:10px;">
 
 <h2 id="username">User</h2>
 
@@ -97,6 +98,29 @@ function logout(){
 function goHome(){
   window.location.href="index.html";
 }
+const profileImg = document.getElementById("profileImg");
+const profileInput = document.getElementById("profileInput");
+
+// Load saved image
+const savedImage = localStorage.getItem("profileImage");
+if(savedImage){
+  profileImg.src = savedImage;
+}
+
+// When user selects new image
+profileInput.addEventListener("change", function(){
+  const file = this.files[0];
+  const reader = new FileReader();
+
+  reader.onload = function(){
+    profileImg.src = reader.result;
+    localStorage.setItem("profileImage", reader.result);
+  }
+
+  if(file){
+    reader.readAsDataURL(file);
+  }
+});
 </script>
 
 </body>

@@ -17,17 +17,16 @@ body{
   padding:20px;
 }
 
-/* ===== LOGIN BACKGROUND ===== */
+/* ===== BACKGROUND IMAGE ===== */
 body::before{
   content:"";
   position:fixed;
   inset:0;
-  background:url('bg.jpg') center/cover no-repeat;
+  background:url(bg.jpg) center/cover no-repeat;
   filter:brightness(.4);
   z-index:-2;
 }
 
-/* Dark overlay like hero */
 body::after{
   content:"";
   position:fixed;
@@ -39,6 +38,7 @@ body::after{
 /* ===== LOGIN BOX ===== */
 .login-box{
   width:360px;
+  max-width:100%;
   background:#0f172a;
   padding:35px 28px;
   border-radius:16px;
@@ -62,9 +62,9 @@ body::after{
 /* ===== INPUT ===== */
 .login-box input{
   width:100%;
-  padding:12px;
+  padding:13px;
   margin:10px 0;
-  border-radius:10px;
+  border-radius:12px;
   border:1px solid #1e293b;
   background:#020617;
   color:#fff;
@@ -75,30 +75,90 @@ body::after{
 
 .login-box input:focus{
   border:1px solid #ef4444;
+  box-shadow:0 0 0 2px rgba(239,68,68,.15);
 }
 
 /* ===== BUTTON ===== */
 .login-box button{
   width:100%;
-  padding:13px;
+  padding:14px;
   margin-top:15px;
   background:#ef4444;
   color:#fff;
   border:none;
-  border-radius:12px;
+  border-radius:14px;
   font-size:16px;
   cursor:pointer;
   transition:.3s;
+  font-weight:600;
 }
 
 .login-box button:hover{
   background:#dc2626;
 }
 
-/* ===== MOBILE ===== */
-@media(max-width:420px){
+/* ===== LINK ===== */
+.login-box a{
+  text-decoration:none;
+  font-weight:600;
+}
+
+/* ================= MOBILE RESPONSIVE ================= */
+
+/* Tablet */
+@media (max-width:768px){
+
+  body{
+    align-items:flex-start;
+    padding-top:60px;
+  }
+
   .login-box{
-    width:100%;
-    padding:25px;
+    max-width:420px;
+    margin:auto;
+  }
+
+  .login-box h2{
+    font-size:26px;
+  }
+}
+
+/* ===== MOBILE BIGGER ===== */
+@media (max-width:480px){
+
+  .login-box{
+    width:94%;          /* almost full screen */
+    max-width:none;     /* limit hata di */
+    padding:34px;       /* andar zyada space */
+    border-radius:18px;
+  }
+
+  .login-box h2{
+    font-size:24px;
+    margin-bottom:18px;
+  }
+
+  .login-box input{
+    padding:16px;
+    font-size:15px;
+    margin:12px 0;
+  }
+
+  .login-box button{
+    padding:17px;
+    font-size:16px;
+  }
+}
+
+/* Small phones */
+@media (max-width:360px){
+
+  .login-box{
+    width:96%;
+    padding:26px;
+  }
+
+  .login-box h2{
+    font-size:22px;
   }
 }

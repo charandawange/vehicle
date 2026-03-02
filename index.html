@@ -29,7 +29,10 @@
   <!-- User/Profile section -->
  <div id="user-section">
   <div class="profile-box">
-   
+    <img id="navProfileImg"
+         src="https://i.imgur.com/6VBx3io.png"
+         onclick="window.location.href='profile.html'"
+         style="width:35px;height:35px;border-radius:50%;cursor:pointer;">
   </div>
 </div>
 </nav>
@@ -147,9 +150,11 @@
         </div>
 
     </div>
-  </div>
-</section>
 
+  </div>
+ 
+ 
+</section>
 
 
 <h1>Available Cars</h1>
@@ -520,6 +525,25 @@
       <option value="Audi R8">Audi R8</option>
       <option value="Mercedes AMG GT">Mercedes AMG GT</option>
       <option value="Porsche 911">Porsche 911</option>
+      <option value="Lamborghini Huracan">Lamborghini Huracan</option>
+      <option value="Ferrari 488">Ferrari 488</option>
+       <option value="Tata Nexon EV">Tata Nexon EV</option>
+       <option value="Hyundai Creta">Hyundai Creta</option>
+       <option value="Honda City">Honda City</option>
+       <option value="Maruti Swift">Maruti Swift</option>
+       <option value="Maruti Alto">Maruti Alto</option>
+       <option value="Toyota Corolla">Toyota Corolla</option>
+       <option value="Mahindra Thar">Mahindra Thar</option>
+        <option value="Mahindra Scorpio">Mahindra Scorpio</option>
+        <option value="Hundai verna">Hundai verna</option>
+        <option value="Honda Creata">Honda Creata</option>
+          <option value="Honda City">Honda City</option>
+            <option value="Tata Safari">Tata Safari</option>  
+            <option value="BMW X5">BMW X5</option>
+            <option value="Audi Q7">Audi Q7</option>
+            <option value="Mercedes GLC">Mercedes GLC</option>
+            <option value="Range Rover">Range Rover</option>
+            
     </select>
 
     <label for="date">Select Date:</label>
@@ -657,6 +681,50 @@ setInterval(() => {
 
 </script>
 
+<script>
+let cars = JSON.parse(localStorage.getItem("cars")) || [];
+
+function showCars(){
+
+  const box = document.getElementById("adminCars");
+  if(!box) return;
+
+  box.innerHTML="";
+
+  cars.forEach((c)=>{
+
+    const div=document.createElement("div");
+    div.className="car-card";
+
+    div.innerHTML=`
+      <img src="${c.img}">
+      <div class="car-info">
+        <h3>${c.name}</h3>
+        <p>${c.fuel || "Petrol"} • Automatic</p>
+        <span class="price">₹${c.price}</span>
+      </div>
+    `;
+
+    box.appendChild(div);
+  });
+}
+showCars();
+
+function adminLogin(){
+
+  const user = prompt("Admin username");
+  const pass = prompt("Admin password");
+
+  if(user==="admin" && pass==="1234"){
+    localStorage.setItem("isAdmin","true");
+    alert("Admin login success");
+    window.location.href="admin.html";
+  }else{
+    alert("Wrong admin credentials");
+  }
+
+}
+</script>
 </body>
 <script src="syntax.js"></script>
 </html>
